@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasya Beauty — Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Poppins", system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <header class="w-full border-b border-gray-100 relative z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="#" class="flex items-center gap-3 shrink-0">
+            <img
+              class="w-[200px]"
+              src="asset/tasya logo.png"
+              alt=""
+              srcset=""
+            />
+            <div class="leading-tight"></div>
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav
+            class="hidden lg:flex items-center gap-10 text-gray-700 uppercase text-sm font-medium tracking-wide"
+          >
+            <a href="#" class="hover:text-pink-900 transition">Homepage</a>
+
+            <div class="relative group">
+              <button
+                class="flex items-center gap-1 hover:text-pink-900 transition py-6 uppercase"
+              >
+                Product
+                <svg
+                  class="w-3 h-3 mt-0.5 transition-transform group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="absolute left-0 top-full w-48 bg-white shadow-lg rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all normal-case text-gray-600"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-pink-50 hover:text-pink-500 uppercase"
+                  >Products</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-pink-50 hover:text-pink-500 uppercase"
+                  >Single Products</a
+                >
+              </div>
+            </div>
+
+            <div class="relative group">
+              <button
+                class="flex items-center gap-1 hover:text-pink-900 transition py-6 uppercase"
+              >
+                Page
+                <svg
+                  class="w-3 h-3 mt-0.5 transition-transform group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="absolute left-0 top-full w-48 bg-white shadow-lg rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all normal-case text-gray-600"
+              >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-pink-50 hover:text-pink-500 uppercase"
+                  >About</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-pink-50 hover:text-pink-500 uppercase"
+                  >FAQ</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-pink-50 hover:text-pink-500 uppercase"
+                  >Blog</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-pink-50 hover:text-pink-500 uppercase"
+                  >Single Post</a
+                >
+              </div>
+            </div>
+
+            <a href="#" class="hover:text-pink-900 transition">Contact</a>
+          </nav>
+
+          <!-- Right side -->
+          <div class="hidden lg:flex items-center gap-3">
+            <button
+              id="searchBtn"
+              aria-label="Search"
+              class="w-11 h-11 flex items-center justify-center bg-gray-800 text-white rounded-md hover:bg-pink-400 transition"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
+                />
+              </svg>
+            </button>
+
+            <button
+              class="relative flex items-center gap-2 bg-pink-300 hover:bg-pink-400 transition text-white font-semibold px-5 py-3 rounded-md"
+            >
+              <span>$0.00</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              <span
+                id="cartCount"
+                class="absolute -top-2 -right-2 bg-gray-900 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center"
+                >0</span
+              >
+            </button>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobileMenuBtn"
+            class="lg:hidden text-gray-800"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="lg:hidden hidden border-t border-gray-100 bg-white"
+      >
+        <div
+          class="px-4 py-4 space-y-1 uppercase text-sm font-medium text-gray-700 uppercase"
+        >
+          <a href="#" class="block py-2">Homepage</a>
+
+          <button
+            class="w-full flex justify-between items-center py-2 mobile-dropdown-btn uppercase hover:text-pink-900"
+          >
+            Product
+            <svg
+              class="w-3 h-3 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            class="hidden pl-4 pb-2 space-y-1 normal-case text-gray-500 mobile-dropdown-panel"
+          >
+            <a href="#" class="block py-1 uppercase"> Products</a>
+            <a href="#" class="block py-1 uppercase">Single Products</a>
+          </div>
+
+          <button
+            class="w-full flex justify-between items-center py-2 mobile-dropdown-btn uppercase hover:text-pink-900"
+          >
+            Page
+            <svg
+              class="w-3 h-3 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            class="hidden pl-4 pb-2 space-y-1 normal-case text-gray-500 mobile-dropdown-panel"
+          >
+            <a href="#" class="block py-1 uppercase hover:text-pink-500"
+              >About Us</a
+            >
+            <a href="#" class="block py-1 uppercase text-pink-500">FAQ</a>
+            <a href="#" class="block py-1 uppercase hover:text-pink-500"
+              >Blog</a
+            >
+            <a href="#" class="block py-1 uppercase hover:text-pink-500"
+              >Single Product</a
+            >
+          </div>
+
+          <a href="#" class="block py-2 uppercase hover:text-pink-900"
+            >Contact</a
+          >
+
+          <div class="flex items-center gap-3 pt-3">
+            <button
+              class="w-11 h-11 flex items-center justify-center bg-gray-800 text-white rounded-md hover:bg-pink-400"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
+                />
+              </svg>
+            </button>
+            <button
+              class="relative flex items-center gap-2 bg-pink-300 text-white font-semibold px-5 py-3 rounded-md"
+            >
+              <span>$0.00</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              <span
+                class="absolute -top-2 -right-2 bg-gray-900 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center"
+                >0</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 bg-gray-200">
+      <img
+        src="asset/flower2.png"
+        alt=""
+        class="absolute -top-6 -left-10 w-40 sm:w-56 opacity-90 pointer-events-none select-none z-0"
+      />
+      <img
+        src="asset/Leaf4.png"
+        alt=""
+        class="absolute -bottom-10 -right-10 w-32 sm:w-48 opacity-90 pointer-events-none select-none z-0"
+      />
+
+      <div
+        class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center lg:place-items-stretch"
+      >
+        <div class="text-center lg:text-left">
+          <p
+            class="text-pink-400 tracking-widest text-sm font-semibold uppercase mb-4"
+          >
+            100% Organic Product
+          </p>
+          <h1
+            class="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-gray-800 leading-tight mb-6"
+          >
+            Everything Has Beauty,<br class="hidden lg:block" />
+            But Not Everyone Sees It
+          </h1>
+          <p
+            class="border-l-2 border-pink-300 pl-4 text-gray-500 max-w-md mb-8 mx-auto lg:mx-0"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <div
+            class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6"
+          >
+            <button
+              class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-4 rounded-full"
+            >
+              Explore More
+            </button>
+            <button
+              class="flex items-center gap-3 text-gray-700 font-medium uppercase text-sm tracking-wide"
+            >
+              <span
+                class="w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center"
+                >▶</span
+              >
+              Our Video
+            </button>
+          </div>
+        </div>
+
+        <div class="relative hidden lg:block">
+          <div
+            class="absolute inset-0 bg-pink-100 rounded-t-[10rem] scale-100 -z-10"
+          ></div>
+          <img
+            src="asset/herosection.png"
+            alt="Model with natural skincare glow"
+            class="relative z-10 w-full max-h-[560px] object-cover rounded-[3rem]"
+          />
+          <img
+            src="asset/flower1.png"
+            alt=""
+            class="absolute bottom-0 right-4 w-64 z-20 pointer-events-none select-none"
+          />
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ABOUT TASYA -->
+<section class="relative overflow-hidden py-14 lg:py-16 px-6 lg:px-12 bg-white">
+
+  <div class="relative z-10 max-w-5xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+
+    <div class="relative flex justify-center order-2 lg:order-1">
+
+      <div class="absolute w-[240px] h-[240px] sm:w-[340px] sm:h-[340px] rounded-full border border-gray-100 z-0"></div>
+      <div class="absolute w-[190px] h-[190px] sm:w-[260px] sm:h-[260px] rounded-full border border-gray-100 z-0"></div>
+
+      <img
+        src="asset/Leaf1.png"
+        alt=""
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] sm:w-[340px] z-10 pointer-events-none select-none"
+      />
+
+      <img
+        src="asset/PrdSunscreenfront.png"
+        alt="Tasya Beauty Sunscreen"
+        class="relative z-20 w-auto max-w-[200px] sm:max-w-xs"
+      />
+
+      <div class="absolute top-6 left-7 z-30 bg-pink-500 text-white w-20 h-20 rounded-2xl flex flex-col items-center justify-center shadow-lg">
+        <span class="text-lg font-bold leading-none">25+</span>
+        <span class="text-xs mt-1">products</span>
+      </div>
+
+    </div>
+
+    <div class="order-1 lg:order-2 text-center lg:text-left">
+      <p class="text-pink-400 text-sm tracking-widest uppercase font-semibold mb-4">
+        About Tasya
+      </p>
+
+      <h2 class="text-gray-700 font-mono text-2xl sm:text-3xl font-extrabold mb-4 leading-tight">
+        We Use Pure &amp; Natural Ingredients
+      </h2>
+
+      <p class="text-sm text-gray-600 mb-3 max-w-md mx-auto lg:mx-0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non maximus nisl. Vivamus imperdiet porttitor lorem.
+      </p>
+
+      <p class="text-sm text-gray-600 mb-3 max-w-md mx-auto lg:mx-0">
+        Duis vitae fermentum urna. Maecenas venenatis feugiat arcu et sodales. Integer non ex vel ante vulputate porttitor praesent aliquet elit sit amet enim cursus, pharetra ornare nisl lacinia. Pellentesque sed magna posuere.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-6">
+        <p class="border-l-2 border-pink-300 pl-4 text-gray-500 text-sm text-left">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <img class="w-[80px] sm:w-[100px]" src="asset/Autograph.png" alt="" />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <script>
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      document.querySelectorAll(".mobile-dropdown-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const panel = btn.nextElementSibling;
+          panel.classList.toggle("hidden");
+          const icon = btn.querySelector("svg");
+          icon.classList.toggle("rotate-180");
+        });
+      });
+
+      // Example: cart count hook (increment on cart button click, for demo purposes)
+      let count = 0;
+      document
+        .querySelectorAll("#cartCount, .lg\\:hidden .absolute")
+        .forEach(() => {});
+    </script>
+  </body>
+</html>
