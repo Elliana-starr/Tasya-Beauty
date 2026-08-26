@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tasya Beauty — Navbar</title>
+    <title>Tasya Beauty</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
     <style>
       body {
         font-family: "Poppins", system-ui, sans-serif;
@@ -193,7 +197,7 @@
         <div
           class="px-4 py-4 space-y-1 uppercase text-sm font-medium text-gray-700 uppercase"
         >
-          <a href="#" class="block py-2">Homepage</a>
+          <a href="#" class="block py-2 hover:text-pink-400">Homepage</a>
 
           <button
             class="w-full flex justify-between items-center py-2 mobile-dropdown-btn uppercase hover:text-pink-900"
@@ -325,7 +329,7 @@
             100% Organic Product
           </p>
           <h1
-            class="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-gray-800 leading-tight mb-6"
+            class="text-xl sm:text-4xl lg:text-6xl font-extrabold text-gray-800 leading-tight mb-6 font-mono"
           >
             Everything Has Beauty,<br class="hidden lg:block" />
             But Not Everyone Sees It
@@ -344,7 +348,7 @@
               Explore More
             </button>
             <button
-              class="flex items-center gap-3 text-gray-700 font-medium uppercase text-sm tracking-wide"
+              class="flex items-center gap-3 text-gray-700 font-medium uppercase text-sm tracking-wide hover:text-pink-400"
             >
               <span
                 class="w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center"
@@ -378,28 +382,30 @@
     <!-- ABOUT TASYA -->
 <section class="relative overflow-hidden py-14 lg:py-16 px-6 lg:px-12 bg-white">
 
-  <div class="relative z-10 max-w-5xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+  <div class="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
     <div class="relative flex justify-center order-2 lg:order-1">
 
-      <div class="absolute w-[240px] h-[240px] sm:w-[340px] sm:h-[340px] rounded-full border border-gray-100 z-0"></div>
-      <div class="absolute w-[190px] h-[190px] sm:w-[260px] sm:h-[260px] rounded-full border border-gray-100 z-0"></div>
+      <div class="absolute w-[280px] h-[280px] sm:w-[420px] sm:h-[420px] rounded-full border border-gray-100 z-0"></div>
+      <div class="absolute w-[220px] h-[220px] sm:w-[320px] sm:h-[320px] rounded-full border border-gray-100 z-0"></div>
 
       <img
         src="asset/Leaf1.png"
         alt=""
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[240px] sm:w-[340px] z-10 pointer-events-none select-none"
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[440px] z-10 pointer-events-none select-none"
       />
 
-      <img
-        src="asset/PrdSunscreenfront.png"
-        alt="Tasya Beauty Sunscreen"
-        class="relative z-20 w-auto max-w-[200px] sm:max-w-xs"
-      />
+      <div class="relative z-20 inline-block ">
+        <img
+          src="asset/PrdSunscreenfront.png"
+          alt="Tasya Beauty Sunscreen"
+          class="relative z-20 w-auto max-w-[260px] sm:max-w-sm lg:max-w-md "
+        />
 
-      <div class="absolute top-6 left-7 z-30 bg-pink-500 text-white w-20 h-20 rounded-2xl flex flex-col items-center justify-center shadow-lg">
-        <span class="text-lg font-bold leading-none">25+</span>
-        <span class="text-xs mt-1">products</span>
+        <div class="absolute -top-4 -left-4 sm:-top-6 sm:-left-6 z-0 bg-pink-500 text-white w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-xl sm:rounded-2xl flex flex-col items-center justify-center shadow-lg">
+          <span class="text-base sm:text-xl lg:text-2xl font-bold leading-none">25+</span>
+          <span class="text-[10px] sm:text-xs lg:text-sm mt-1">products</span>
+        </div>
       </div>
 
     </div>
@@ -409,28 +415,388 @@
         About Tasya
       </p>
 
-      <h2 class="text-gray-700 font-mono text-2xl sm:text-3xl font-extrabold mb-4 leading-tight">
+      <h2 class="text-gray-700 font-mono text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight">
         We Use Pure &amp; Natural Ingredients
       </h2>
 
-      <p class="text-sm text-gray-600 mb-3 max-w-md mx-auto lg:mx-0">
+      <p class="text-base sm:text-lg text-gray-600 mb-4 max-w-md mx-auto lg:mx-0 font-medium">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non maximus nisl. Vivamus imperdiet porttitor lorem.
       </p>
 
-      <p class="text-sm text-gray-600 mb-3 max-w-md mx-auto lg:mx-0">
+      <p class="text-base sm:text-lg text-gray-600 mb-4 max-w-md mx-auto lg:mx-0">
         Duis vitae fermentum urna. Maecenas venenatis feugiat arcu et sodales. Integer non ex vel ante vulputate porttitor praesent aliquet elit sit amet enim cursus, pharetra ornare nisl lacinia. Pellentesque sed magna posuere.
       </p>
 
       <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-6">
-        <p class="border-l-2 border-pink-300 pl-4 text-gray-500 text-sm text-left">
+        <p class="border-l-2 border-pink-300 pl-4 text-gray-500 text-base text-left">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
-        <img class="w-[80px] sm:w-[100px]" src="asset/Autograph.png" alt="" />
+        <img class="w-[100px] sm:w-[120px]" src="asset/Autograph.png" alt="" />
       </div>
     </div>
 
   </div>
 </section>
+
+
+<section class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 bg-gray-200">
+  <img
+    src="asset/tropical-jungle-monstera-leaf-2021-08-27-09-32-56-utc.png"
+    alt=""
+    class="absolute -top-10 -left-16 w-32 sm:w-[28rem] opacity-90 pointer-events-none select-none z-0"
+  />
+  <img
+    src="asset/Flower-3.png"
+    alt=""
+    class="absolute -bottom-16 -right-16 w-48 sm:w-72 opacity-90 pointer-events-none select-none z-0"
+  />
+
+  <div class="relative z-10 text-center max-w-2xl mx-auto">
+    <h2 class="uppercase text-sm text-pink-400 font-semibold mb-4 tracking-widest">our popular</h2>
+    <p class="text-4xl font-bold text-gray-800 mb-4 leading-tight">We Provide The Best For Your Skin</p>
+    <p class="text-sm text-gray-500 leading-relaxed">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
+      luctus nec ullamcorper mattis, pulvinar dapibus leo.
+    </p>
+  </div>
+
+  <!-- CARDS -->
+  <div class="relative z-10 mt-12">
+    <div class="card-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+      <div class="card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
+        <img src="asset/PrdBody-Soap-600x600.png" class="card-img-top mx-auto mb-4" alt="Body Soap">
+        <div class="card-body">
+          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Body Soap</h5>
+          <p class="card-text text-sm mb-4">
+            <del class="text-gray-400 font-medium">$25.00</del>
+            <span class="text-gray-800 font-semibold underline">$20.00</span>
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        </div>
+      </div>
+
+      <div class="card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
+        <img src="asset/PrdToner-600x600.png" class="card-img-top mx-auto mb-4" alt="Toner">
+        <div class="card-body">
+          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Toner</h5>
+          <p class="card-text text-sm mb-4">
+            <del class="text-gray-400 font-medium">$20.00</del>
+            <span class="text-gray-800 font-semibold underline">$12.00</span>
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        </div>
+      </div>
+
+      <div class="card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
+        <img src="asset/PrdNight-Cream-600x600.png" class="card-img-top mx-auto mb-4" alt="Night Cream">
+        <div class="card-body">
+          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Night Cream</h5>
+          <p class="card-text text-sm mb-4">
+            <del class="text-gray-400 font-medium">$15.00</del>
+            <span class="text-gray-800 font-semibold underline">$10.00</span>
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="relative overflow-hidden py-14 lg:py-20 px-6 lg:px-16 bg-white">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-x-10 lg:gap-x-16 gap-y-8 lg:gap-y-10 items-center">
+
+      <!-- Cell 1 (row 1, col 1): bordered card -->
+      <div class="relative flex justify-center lg:row-start-1 lg:col-start-1">
+        <div class="border-2 border-pink-300 rounded-[2.5rem] p-6 sm:p-8 w-full max-w-sm">
+          <img
+            src="asset/PrdMilk-Cleanser.png"
+            alt="Milk Cleanser"
+            class="w-full h-auto mb-6"
+          />
+          <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-4">What Is In Our Product ?</h3>
+          <ul class="space-y-3 text-left">
+            <li class="flex items-start gap-2 text-gray-600 text-sm sm:text-base">
+              <span class="text-pink-400 font-bold mt-0.5">✓</span>
+              Pellentesque vulputate
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 text-sm sm:text-base">
+              <span class="text-pink-400 font-bold mt-0.5">✓</span>
+              Curabitur vel diam
+            </li>
+            <li class="flex items-start gap-2 text-gray-600 text-sm sm:text-base">
+              <span class="text-pink-400 font-bold mt-0.5">✓</span>
+              Etiam accumsan elementum
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cell 2 (row 1, col 2): heading + copy -->
+      <div class="text-center lg:text-left lg:row-start-1 lg:col-start-2">
+        <p class="text-pink-400 text-sm tracking-widest uppercase font-semibold mb-4">
+          Why Choose Our Product ?
+        </p>
+        <h2 class="text-gray-700 text-3xl sm:text-4xl lg:text-4xl font-extrabold mb-6 leading-tight">
+          We Use The Best &amp; Natural Ingredients
+        </h2>
+        <p class="text-base sm:text-lg text-gray-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
+          Maecenas venenatis feugiat arcu et sodales. Integer non ex vel ante vulputate porttitor.
+          Praesent aliquet elit sit amet enim cursus, pharetra ornare nisl lacinia. Pellentesque sed
+          magna posuere, euismod ante eu, feugiat augue. Phasellus blandit pellentesque blandit.
+          Cras mauris magna, accumsan a odio at, feugiat pharetra magna.
+        </p>
+      </div>
+
+      <!-- Cell 3 (row 2, col 1): body scrub image -->
+      <div class="flex justify-center order-4 lg:order-none lg:row-start-2 lg:col-start-1">
+        <img
+          src="asset/PrdBody-Scrub-cropped.png"
+          alt="Body Scrub"
+          class="w-full max-w-md h-auto"
+        />
+      </div>
+
+      <!-- Cell 4 (row 2, col 2): trust/testimonial -->
+      <div class="text-center lg:text-left order-3 lg:order-none lg:row-start-2 lg:col-start-2">
+        <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-5">
+          Trusted By Over 20k + Costumer
+        </h3>
+
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-5">
+          <img
+            src="asset/Costumer1.png"
+            alt="Happy customers"
+            class="h-12 sm:h-14 w-auto mx-auto sm:mx-0"
+          />
+          <div class="flex items-center justify-center sm:justify-start gap-2">
+            <span class="text-gray-700 font-semibold">4.8 (12.000 Review)</span>
+            <span class="text-orange-400 tracking-tight">★★★★★</span>
+          </div>
+        </div>
+
+        <p class="text-base sm:text-lg text-gray-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
+          Nunc non egestas purus. Duis viverra accumsan massa, non vulputate magna pharetra eu.
+          Suspendisse potenti. Aenean orci risus, eleifend sit amet lacus id.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="relative overflow-hidden bg-gray-100 py-16 lg:py-24 px-6 lg:px-16">
+
+  <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+
+   
+    <div class="relative flex justify-center lg:justify-start">
+      <img
+        src="asset/flower1.png"
+        alt=""
+        class="absolute left-0 top-1/2 -translate-y-1/2 w-40 sm:w-56 z-0 pointer-events-none select-none"
+      />
+      <img
+  src="asset/beautiful-long-smooth-hair-woman-happy-clean-skin-2022-01-29-07-01-13-utc-2.png"
+  alt="Woman with natural skincare glow"
+  class="relative z-10 w-full max-w-sm h-auto object-contain"
+/>
+    </div>
+
+    <!-- Right: text content -->
+    <div class="text-center lg:text-left">
+      <h2 class="text-gray-700 text-3xl sm:text-4xl lg:text-4xl font-extrabold mb-6 leading-tight">
+        Get 30% Cut For All Our Product Until 31 October
+      </h2>
+
+      <p class="text-gray-800 font-semibold mb-4">
+        Lorem ipsum dolor sit amet, <span class="text-pink-400">Condition Apply</span>
+      </p>
+
+      <p class="text-gray-500 mb-8 max-w-md mx-auto lg:mx-0">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+        ullamcorper mattis, pulvinar dapibus leo.
+      </p>
+
+      <button class="inline-flex items-center gap-2 bg-pink-400 hover:bg-pink-500 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-4 rounded-full">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        Shop Now
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- NEW RELEASE -->
+<section class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 ">
+ <img
+  src="asset/Leaf3.png"
+  alt=""
+  class="absolute -top-10 -left-16 w-32 sm:w-80 opacity-90 pointer-events-none select-none z-0"
+/>
+<img
+  src="asset/Leaf4.png"
+  alt=""
+  class="absolute -bottom-10 -right-6 w-56 sm:w-80 opacity-100 pointer-events-none select-none z-10"
+/>
+
+  <div class="relative z-10 text-center max-w-2xl mx-auto">
+    <h2 class="uppercase text-sm text-pink-400 font-semibold mb-4 tracking-widest">new release</h2>
+    <p class="text-4xl font-bold text-gray-800 mb-4 leading-tight">Beauty Lies in Healthy <br> Mind, Body and Spirit</p>
+    <p class="text-sm text-gray-500 leading-relaxed">
+      Aenean porttitor, risus vitae semper ullamcorper, tellus felis sollicitudin mauris, eu mollis arcu sapien vel turpis. Suspendisse maximus,
+      quam et lacinia consequat, sapien turpis accumsan tellus.
+    </p>
+  </div>
+
+  <!-- CARDS -->
+  <div class="relative z-10 mt-12">
+    <div class="card-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+      <div class="card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+       
+        <img src="asset/PrdSunscreen-600x600.png" class="card-img-top mx-auto mb-4" alt="Body Soap">
+        <div class="card-body">
+          <h5 class="card-title text-lg font-semibold text-gray-700 mb-2">Sunscreen</h5>
+          <p class="card-text text-sm mb-4 text-gray-600">$15.00
+        
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        </div>
+      </div>
+
+      <div class="card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+       
+        <img src="asset/PrdToner-600x600.png" class="card-img-top mx-auto mb-4" alt="Toner">
+        <div class="card-body">
+          <h5 class="card-title text-lg font-semibold text-gray-700 mb-2">Toner</h5>
+          <p class="card-text text-sm mb-4 text-gray-600">
+            $20.00
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        </div>
+      </div>
+
+      <div class="card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+        
+        <img src="asset/PrdFace-Oil-600x600.png" class="card-img-top mx-auto mb-4" alt="Night Cream">
+        <div class="card-body">
+          <h5 class="card-title text-lg font-semibold text-gray-700 mb-2">Face Oil</h5>
+          <p class="card-text text-sm mb-4 text-gray-600"> 
+           $15.00
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 bg-gray-200">
+  <div class="relative z-10 text-center max-w-2xl mx-auto mb-10">
+    <h2 class="uppercase text-sm text-pink-400 font-semibold mb-4 tracking-widest">latest news</h2>
+    <p class="text-4xl font-bold text-gray-800 mb-4 leading-tight">Amazing Blog Post & Article</p>
+    <p class="text-sm text-gray-500 leading-relaxed">
+      Aenean porttitor, risus vitae semper ullamcorper, tellus felis sollicitudin mauris, eu mollis arcu sapien vel turpis.
+      Suspendisse maximus, quam et lacinia consequat, sapien turpis accumsan tellus.
+    </p>
+  </div>
+
+  <div class="max-w-6xl mx-auto m-4 lg:m-8">
+
+    <div class="bg-white border-2 border-pink-300 rounded-[2rem] p-4 sm:p-6 lg:p-10">
+
+      <div class="flex flex-col lg:flex-row lg:items-stretch gap-6">
+
+        <!-- Big card, left -->
+        <div class="flex flex-col lg:w-2/5 bg-white rounded-2xl shadow-md overflow-hidden">
+          <img src="asset/beautiful-young-woman-with-a-pink-larkspur-flower-2022-08-14-01-29-05-utc.jpg" class="w-full h-56 sm:h-64 lg:h-80 object-cover" alt="Card image">
+          <div class="flex flex-col flex-1 justify-between p-5">
+            <div>
+              <h5 class="text-lg font-semibold text-gray-800 mb-3">Kiss Your Thin Lips Goodbye!</h5>
+              <p class="text-sm text-gray-500 mb-3">
+                Nam vel viverra libero, eget lobortis est. Proin blandit enim augue, non lobortis purus ultricies in. Donec ut venenatis justo. Vestibulum tellus lectus, feugiat nec, pretium quis, sem. Nulla consequat massa quis enim.
+              </p>
+            </div>
+            <span class="text-pink-500 font-semibold text-sm">Read More +</span>
+          </div>
+          <div class="border-t border-gray-100 px-5 py-3">
+            <small class="text-gray-400 text-xs">October 25, 2022 <span><i class="bi bi-dot"></i></span> No Comments</small>
+          </div>
+        </div>
+
+        <!-- Three small cards, right -->
+        <div class="lg:w-3/5 space-y-6">
+
+          <div class="flex flex-col sm:flex-row bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="w-full sm:w-1/3 shrink-0">
+              <img src="asset/young-beautiful-woman-with-a-bottle-of-perfume-2022-05-13-01-04-39-utc.jpg" class="w-full h-40 sm:h-full object-cover" alt="Body Soap">
+            </div>
+            <div class="w-full sm:w-2/3 p-5">
+              <h5 class="text-lg font-semibold text-gray-800 mb-2">Enjoy The Stay, Love The Shine</h5>
+              <small class="text-xs text-gray-500 mb-3 block">October 23, 2022 / No Comments</small>
+              <p class="text-sm text-gray-500 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
+              <p class="text-pink-500 font-semibold text-sm">Read More +</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="w-full sm:w-1/3 shrink-0">
+              <img src="asset/young-girl-with-care-beautiful-healthy-clean-skin-2022-01-28-12-31-23-utc.jpg" class="w-full h-40 sm:h-full object-cover" alt="Toner">
+            </div>
+            <div class="w-full sm:w-2/3 p-5">
+              <h5 class="text-lg font-semibold text-gray-800 mb-2">Sparkle On The Inside And Out</h5>
+              <small class="text-xs text-gray-500 mb-3 block">October 23, 2022 / No Comments</small>
+              <p class="text-sm text-gray-500 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
+              <p class="text-pink-500 font-semibold text-sm">Read More +</p>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="w-full sm:w-1/3 shrink-0">
+              <img src="asset/beautiful-african-woman-black-t-shirt-portrait-afr-2022-01-29-07-01-03-utc.jpg" class="w-full h-40 sm:h-full object-cover" alt="Night Cream">
+            </div>
+            <div class="w-full sm:w-2/3 p-5">
+              <h5 class="text-lg font-semibold text-gray-800 mb-2">Inner Beauty Is The Best Beauty</h5>
+              <small class="text-xs text-gray-500 mb-3 block">October 23, 2022 / No Comments</small>
+              <p class="text-sm text-gray-500 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
+              <p class="text-pink-500 font-semibold text-sm">Read More +</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
 
     <script>
       const mobileMenuBtn = document.getElementById("mobileMenuBtn");
@@ -454,5 +820,9 @@
         .querySelectorAll("#cartCount, .lg\\:hidden .absolute")
         .forEach(() => {});
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
