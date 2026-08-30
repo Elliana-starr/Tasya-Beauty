@@ -13,6 +13,73 @@
       body {
         font-family: "Poppins", system-ui, sans-serif;
       }
+
+      /* ---- Scroll reveal animation system ---- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
+      .reveal.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-left {
+        transform: translateX(-70px);
+      }
+      .reveal-left.in-view {
+        transform: translateX(0);
+      }
+
+      .reveal-right {
+        transform: translateX(70px);
+      }
+      .reveal-right.in-view {
+        transform: translateX(0);
+      }
+
+      .reveal-scale {
+        transform: scale(0.94);
+      }
+      .reveal-scale.in-view {
+        transform: scale(1);
+      }
+
+      /* Small delay helpers so two side-by-side reveal-left/right columns
+         don't animate at the exact same millisecond */
+      .reveal-delay-1.in-view { transition-delay: 0.1s; }
+      .reveal-delay-2.in-view { transition-delay: 0.2s; }
+      .reveal-delay-3.in-view { transition-delay: 0.3s; }
+
+      /* Stagger children: put .reveal (+ any variant) on the wrapper,
+         and .reveal-item on each child you want to cascade in */
+      .reveal-item {
+        opacity: 0;
+        transform: translateY(35px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .in-view .reveal-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .in-view .reveal-item:nth-child(1) { transition-delay: 0.05s; }
+      .in-view .reveal-item:nth-child(2) { transition-delay: 0.15s; }
+      .in-view .reveal-item:nth-child(3) { transition-delay: 0.25s; }
+      .in-view .reveal-item:nth-child(4) { transition-delay: 0.35s; }
+      .in-view .reveal-item:nth-child(5) { transition-delay: 0.45s; }
+      .in-view .reveal-item:nth-child(6) { transition-delay: 0.55s; }
+
+      /* Respect reduced-motion preference */
+      @media (prefers-reduced-motion: reduce) {
+        .reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-item {
+          transition: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
     </style>
   </head>
   <body class="bg-white">
@@ -322,7 +389,7 @@
       <div
         class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center lg:place-items-stretch"
       >
-        <div class="text-center lg:text-left">
+        <div class="reveal reveal-left text-center lg:text-left">
           <p
             class="text-pink-400 tracking-widest text-sm font-semibold uppercase mb-4"
           >
@@ -359,7 +426,7 @@
           </div>
         </div>
 
-        <div class="relative hidden lg:block">
+        <div class="reveal reveal-right reveal-delay-1 relative hidden lg:block">
           <div
             class="absolute inset-0 bg-pink-100 rounded-t-[10rem] scale-100 -z-10"
           ></div>
@@ -384,7 +451,7 @@
 
   <div class="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
-    <div class="relative flex justify-center order-2 lg:order-1">
+    <div class="reveal reveal-left relative flex justify-center order-2 lg:order-1">
 
       <div class="absolute w-[280px] h-[280px] sm:w-[420px] sm:h-[420px] rounded-full border border-gray-100 z-0"></div>
       <div class="absolute w-[220px] h-[220px] sm:w-[320px] sm:h-[320px] rounded-full border border-gray-100 z-0"></div>
@@ -410,7 +477,7 @@
 
     </div>
 
-    <div class="order-1 lg:order-2 text-center lg:text-left">
+    <div class="reveal reveal-right reveal-delay-1 order-1 lg:order-2 text-center lg:text-left">
       <p class="text-pink-400 text-sm tracking-widest uppercase font-semibold mb-4">
         About Tasya
       </p>
@@ -451,7 +518,7 @@
     class="absolute -bottom-16 -right-16 w-48 sm:w-72 opacity-90 pointer-events-none select-none z-0"
   />
 
-  <div class="relative z-10 text-center max-w-2xl mx-auto">
+  <div class="reveal relative z-10 text-center max-w-2xl mx-auto">
     <h2 class="uppercase text-sm text-pink-400 font-semibold mb-4 tracking-widest">our popular</h2>
     <p class="text-4xl font-bold text-gray-800 mb-4 leading-tight">We Provide The Best For Your Skin</p>
     <p class="text-sm text-gray-500 leading-relaxed">
@@ -462,9 +529,9 @@
 
   <!-- CARDS -->
   <div class="relative z-10 mt-12">
-    <div class="card-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <div class="reveal card-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
-      <div class="card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
         <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
         <img src="asset/PrdBody-Soap-600x600.png" class="card-img-top mx-auto mb-4" alt="Body Soap">
         <div class="card-body">
@@ -479,7 +546,7 @@
         </div>
       </div>
 
-      <div class="card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
         <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
         <img src="asset/PrdToner-600x600.png" class="card-img-top mx-auto mb-4" alt="Toner">
         <div class="card-body">
@@ -494,7 +561,7 @@
         </div>
       </div>
 
-      <div class="card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
         <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
         <img src="asset/PrdNight-Cream-600x600.png" class="card-img-top mx-auto mb-4" alt="Night Cream">
         <div class="card-body">
@@ -520,7 +587,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 gap-x-10 lg:gap-x-16 gap-y-8 lg:gap-y-10 items-center">
 
       <!-- Cell 1 (row 1, col 1): bordered card -->
-      <div class="relative flex justify-center lg:row-start-1 lg:col-start-1">
+      <div class="reveal reveal-left relative flex justify-center lg:row-start-1 lg:col-start-1">
         <div class="border-2 border-pink-300 rounded-[2.5rem] p-6 sm:p-8 w-full max-w-sm">
           <img
             src="asset/PrdMilk-Cleanser.png"
@@ -546,7 +613,7 @@
       </div>
 
       <!-- Cell 2 (row 1, col 2): heading + copy -->
-      <div class="text-center lg:text-left lg:row-start-1 lg:col-start-2">
+      <div class="reveal reveal-right reveal-delay-1 text-center lg:text-left lg:row-start-1 lg:col-start-2">
         <p class="text-pink-400 text-sm tracking-widest uppercase font-semibold mb-4">
           Why Choose Our Product ?
         </p>
@@ -562,7 +629,7 @@
       </div>
 
       <!-- Cell 3 (row 2, col 1): body scrub image -->
-      <div class="flex justify-center order-4 lg:order-none lg:row-start-2 lg:col-start-1">
+      <div class="reveal reveal-left flex justify-center order-4 lg:order-none lg:row-start-2 lg:col-start-1">
         <img
           src="asset/PrdBody-Scrub-cropped.png"
           alt="Body Scrub"
@@ -571,7 +638,7 @@
       </div>
 
     
-      <div class="text-center lg:text-left order-3 lg:order-none lg:row-start-2 lg:col-start-2">
+      <div class="reveal reveal-right reveal-delay-1 text-center lg:text-left order-3 lg:order-none lg:row-start-2 lg:col-start-2">
         <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-5">
           Trusted By Over 20k + Costumer
         </h3>
@@ -604,7 +671,7 @@
   <div class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
 
    
-    <div class="relative flex justify-center lg:justify-start">
+    <div class="reveal reveal-left relative flex justify-center lg:justify-start">
       <img
         src="asset/flower1.png"
         alt=""
@@ -618,7 +685,7 @@
     </div>
 
     <!-- Right: text content -->
-    <div class="text-center lg:text-left">
+    <div class="reveal reveal-right reveal-delay-1 text-center lg:text-left">
       <h2 class="text-gray-700 text-3xl sm:text-4xl lg:text-4xl font-extrabold mb-6 leading-tight">
         Get 30% Cut For All Our Product Until 31 October
       </h2>
@@ -657,7 +724,7 @@
   class="absolute -bottom-10 -right-6 w-56 sm:w-80 opacity-100 pointer-events-none select-none z-10"
 />
 
-  <div class="relative z-10 text-center max-w-2xl mx-auto">
+  <div class="reveal relative z-10 text-center max-w-2xl mx-auto">
     <h2 class="uppercase text-sm text-pink-400 font-semibold mb-4 tracking-widest">new release</h2>
     <p class="text-4xl font-bold text-gray-800 mb-4 leading-tight">Beauty Lies in Healthy <br> Mind, Body and Spirit</p>
     <p class="text-sm text-gray-500 leading-relaxed">
@@ -668,9 +735,9 @@
 
   <!-- CARDS -->
   <div class="relative z-10 mt-12">
-    <div class="card-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <div class="reveal card-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
 
-      <div class="card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
        
         <img src="asset/PrdSunscreen-600x600.png" class="card-img-top mx-auto mb-4" alt="Body Soap">
         <div class="card-body">
@@ -684,7 +751,7 @@
         </div>
       </div>
 
-      <div class="card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
        
         <img src="asset/PrdToner-600x600.png" class="card-img-top mx-auto mb-4" alt="Toner">
         <div class="card-body">
@@ -698,7 +765,7 @@
         </div>
       </div>
 
-      <div class="card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
         
         <img src="asset/PrdFace-Oil-600x600.png" class="card-img-top mx-auto mb-4" alt="Night Cream">
         <div class="card-body">
@@ -718,7 +785,7 @@
 </section>
 
 <section class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 bg-gray-200">
-  <div class="relative z-10 text-center max-w-2xl mx-auto mb-10">
+  <div class="reveal relative z-10 text-center max-w-2xl mx-auto mb-10">
     <h2 class="uppercase text-sm text-pink-400 font-semibold mb-4 tracking-widest">latest news</h2>
     <p class="text-4xl font-bold text-gray-800 mb-4 leading-tight">Amazing Blog Post & Article</p>
     <p class="text-sm text-gray-500 leading-relaxed">
@@ -729,7 +796,7 @@
 
   <div class="max-w-6xl mx-auto m-4 lg:m-8">
 
-    <div class="bg-white border-2 border-pink-300 rounded-[2rem] p-4 sm:p-6 lg:p-10">
+    <div class="reveal reveal-scale bg-white border-2 border-pink-300 rounded-[2rem] p-4 sm:p-6 lg:p-10">
 
       <div class="flex flex-col lg:flex-row lg:items-stretch gap-6">
 
@@ -821,7 +888,7 @@
   <div
     class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center lg:place-items-stretch"
   >
-    <div class="text-center lg:text-left">
+    <div class="reveal reveal-left text-center lg:text-left">
       <p class="text-pink-400 tracking-widest text-xl font-semibold uppercase mb-4">
         FAQ
       </p>
@@ -834,7 +901,7 @@
 
       <!-- Accordion FAQ items -->
       <div class="flex flex-col gap-3">
-        <div class="faq-item rounded-2xl transition-colors duration-300 px-4 py-3">
+        <div class="reveal-item faq-item rounded-2xl transition-colors duration-300 px-4 py-3">
           <p class="faq-toggle flex items-center gap-3 cursor-pointer m-0 text-gray-700 font-medium transition-colors duration-300">
             <span class="faq-icon-wrap flex items-center justify-center w-9 h-9 rounded-full border-2 border-pink-300 text-pink-400 flex-shrink-0 transition-all duration-300">
               <i class="faq-icon bi bi-chevron-up text-base"></i>
@@ -848,7 +915,7 @@
           </div>
         </div>
 
-        <div class="faq-item rounded-2xl transition-colors duration-300 px-4 py-3">
+        <div class="reveal-item faq-item rounded-2xl transition-colors duration-300 px-4 py-3">
           <p class="faq-toggle flex items-center gap-3 cursor-pointer m-0 text-gray-700 font-medium transition-colors duration-300">
             <span class="faq-icon-wrap flex items-center justify-center w-9 h-9 rounded-full border-2 border-pink-300 text-pink-400 flex-shrink-0 transition-all duration-300">
               <i class="faq-icon bi bi-chevron-up text-base"></i>
@@ -863,7 +930,7 @@
           </div>
         </div>
 
-        <div class="faq-item rounded-2xl transition-colors duration-300 px-4 py-3">
+        <div class="reveal-item faq-item rounded-2xl transition-colors duration-300 px-4 py-3">
           <p class="faq-toggle flex items-center gap-3 cursor-pointer m-0 text-gray-700 font-medium transition-colors duration-300">
             <span class="faq-icon-wrap flex items-center justify-center w-9 h-9 rounded-full border-2 border-pink-300 text-pink-400 flex-shrink-0 transition-all duration-300">
               <i class="faq-icon bi bi-chevron-up text-base"></i>
@@ -884,7 +951,7 @@
 
 
     </div>
-  <div class="relative hidden lg:block self-start h-[560px]">
+  <div class="reveal reveal-right reveal-delay-1 relative hidden lg:block self-start h-[560px]">
   <div class="absolute inset-8 bg-pink-100 rounded-t-[10rem] scale-95 -z-10 "></div>
   <img
     src="asset/young-beautiful-woman-with-a-bottle-of-perfume.png"
@@ -1074,8 +1141,39 @@
         .forEach(() => {});
     </script>
 
+    <!-- Scroll reveal animation script  -->
+    <script>
+      (function () {
+        const revealEls = document.querySelectorAll(".reveal");
+
+        if (!("IntersectionObserver" in window) || revealEls.length === 0) {
+          revealEls.forEach((el) => el.classList.add("in-view"));
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            root: null,
+            rootMargin: "0px 0px -10% 0px",
+            threshold: 0.15,
+          }
+        );
+
+        revealEls.forEach((el) => {
+          if (el.closest("footer")) return; // never animate footer content
+          observer.observe(el);
+        });
+      })();
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>
 </html>
-
-
