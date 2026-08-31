@@ -1,0 +1,1111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasya Beauty-About</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+      integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+      integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      body {
+        font-family: "Poppins", system-ui, sans-serif;
+      }
+
+      /* ---- Scroll reveal animation system ---- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition:
+          opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+          transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: opacity, transform;
+      }
+      .reveal.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .reveal-left {
+        transform: translateX(-70px);
+      }
+      .reveal-left.in-view {
+        transform: translateX(0);
+      }
+
+      .reveal-right {
+        transform: translateX(70px);
+      }
+      .reveal-right.in-view {
+        transform: translateX(0);
+      }
+
+      .reveal-scale {
+        transform: scale(0.94);
+      }
+      .reveal-scale.in-view {
+        transform: scale(1);
+      }
+
+      .reveal-delay-1.in-view {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-2.in-view {
+        transition-delay: 0.2s;
+      }
+      .reveal-delay-3.in-view {
+        transition-delay: 0.3s;
+      }
+
+      .reveal-item {
+        opacity: 0;
+        transform: translateY(35px);
+        transition:
+          opacity 0.7s ease,
+          transform 0.7s ease;
+      }
+      .in-view .reveal-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .in-view .reveal-item:nth-child(1) {
+        transition-delay: 0.05s;
+      }
+      .in-view .reveal-item:nth-child(2) {
+        transition-delay: 0.13s;
+      }
+      .in-view .reveal-item:nth-child(3) {
+        transition-delay: 0.21s;
+      }
+      .in-view .reveal-item:nth-child(4) {
+        transition-delay: 0.29s;
+      }
+      .in-view .reveal-item:nth-child(5) {
+        transition-delay: 0.37s;
+      }
+      .in-view .reveal-item:nth-child(6) {
+        transition-delay: 0.45s;
+      }
+      .in-view .reveal-item:nth-child(7) {
+        transition-delay: 0.53s;
+      }
+      .in-view .reveal-item:nth-child(8) {
+        transition-delay: 0.61s;
+      }
+      .in-view .reveal-item:nth-child(9) {
+        transition-delay: 0.69s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .reveal,
+        .reveal-left,
+        .reveal-right,
+        .reveal-scale,
+        .reveal-item {
+          transition: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+
+      /* ---- Product image hover zoom ---- */
+      .zoom-frame {
+        position: relative;
+        overflow: hidden;
+        cursor: zoom-in;
+        border-radius: 1rem;
+      }
+      .zoom-frame img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transform-origin: center center;
+        transform: scale(1);
+        transition: transform 0.15s ease-out;
+        will-change: transform;
+      }
+      .zoom-frame.is-zoomed img {
+        transform: scale(2.2);
+      }
+      .zoom-frame .zoom-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 9999px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        pointer-events: none;
+        z-index: 5;
+      }
+
+      /* Quantity stepper */
+      .qty-input::-webkit-outer-spin-button,
+      .qty-input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .qty-input {
+        -moz-appearance: textfield;
+      }
+
+      /* Tabs underline */
+      .tab-btn {
+        position: relative;
+        padding-bottom: 0.9rem;
+      }
+      .tab-btn.active {
+        color: #f472b6;
+      }
+      .tab-btn.active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 2px;
+        background: #f472b6;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- NAVBAR -->
+    <header class="w-full border-b border-gray-100 relative z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo -->
+          <a href="#" class="flex items-center gap-3 shrink-0">
+            <img
+              class="w-[200px]"
+              src="asset/tasya logo.png"
+              alt=""
+              srcset=""
+            />
+            <div class="leading-tight"></div>
+          </a>
+
+          <!-- Desktop Nav -->
+          <nav
+            class="hidden lg:flex items-center gap-10 text-gray-700 uppercase text-sm font-medium tracking-wide"
+          >
+            <a href="index.html" class="text-pink-900 transition">Homepage</a>
+
+            <div class="relative group">
+              <button
+                class="flex items-center gap-1 hover:text-pink-900 transition py-6 uppercase"
+              >
+                Product
+                <svg
+                  class="w-3 h-3 mt-0.5 transition-transform group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="absolute left-0 top-full w-48 bg-white shadow-lg rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all normal-case text-gray-600"
+              >
+                <a
+                  href="product.html"
+                  class="block px-4 py-2 hover:bg-pink-50 hover:text-pink-500 uppercase"
+                  >Products</a
+                >
+                <a
+                  href="single_product.html"
+                  class="block px-4 py-2 hover:bg-pink-50 hover:text-pink-500 uppercase"
+                  >Single Products</a
+                >
+              </div>
+            </div>
+
+            <div class="relative group">
+              <button
+                class="flex items-center gap-1 hover:text-pink-900 transition py-6 uppercase"
+              >
+                Page
+                <svg
+                  class="w-3 h-3 mt-0.5 transition-transform group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                class="absolute left-0 top-full w-48 bg-white shadow-lg rounded-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all normal-case text-gray-600"
+              >
+                <a
+                  href="about.html"
+                  class="block px-4 py-2 hover:bg-pink-50 hover:text-pink-500 uppercase"
+                  >About</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-pink-50 hover:text-pink-500 uppercase"
+                  >FAQ</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-pink-50 hover:text-pink-500 uppercase"
+                  >Blog</a
+                >
+                <a
+                  href="#"
+                  class="block px-4 py-2 hover:bg-pink-50 hover:text-pink-500 uppercase"
+                  >Single Post</a
+                >
+              </div>
+            </div>
+
+            <a href="#" class="hover:text-pink-900 transition">Contact</a>
+          </nav>
+
+          <!-- Right side -->
+          <div class="hidden lg:flex items-center gap-3">
+            <button
+              id="searchBtn"
+              aria-label="Search"
+              class="w-11 h-11 flex items-center justify-center bg-gray-800 text-white rounded-md hover:bg-pink-400 transition"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
+                />
+              </svg>
+            </button>
+
+            <button
+              class="relative flex items-center gap-2 bg-pink-300 hover:bg-pink-400 transition text-white font-semibold px-5 py-3 rounded-md"
+            >
+              <span>$0.00</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              <span
+                id="cartCount"
+                class="absolute -top-2 -right-2 bg-gray-900 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center"
+                >0</span
+              >
+            </button>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobileMenuBtn"
+            class="lg:hidden text-gray-800"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="lg:hidden hidden border-t border-gray-100 bg-white"
+      >
+        <div
+          class="px-4 py-4 space-y-1 uppercase text-sm font-medium text-gray-700 uppercase"
+        >
+          <a href="index.html" class="block py-2 hover:text-pink-400"
+            >Homepage</a
+          >
+
+          <button
+            class="w-full flex justify-between items-center py-2 mobile-dropdown-btn uppercase hover:text-pink-900"
+          >
+            Product
+            <svg
+              class="w-3 h-3 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            class="hidden pl-4 pb-2 space-y-1 normal-case text-gray-500 mobile-dropdown-panel"
+          >
+            <a
+              href="product.html"
+              class="block py-1 uppercase hover:text-pink-500"
+            >
+              Products</a
+            >
+            <a
+              href="single_product.html"
+              class="block py-1 uppercase hover:text-pink-500"
+              >Single Products</a
+            >
+          </div>
+
+          <button
+            class="w-full flex justify-between items-center py-2 mobile-dropdown-btn uppercase hover:text-pink-900"
+          >
+            Page
+            <svg
+              class="w-3 h-3 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          <div
+            class="hidden pl-4 pb-2 space-y-1 normal-case text-gray-500 mobile-dropdown-panel"
+          >
+            <a
+              href="about.html"
+              class="block py-1 uppercase hover:text-pink-500"
+              >About</a
+            >
+            <a href="#" class="block py-1 uppercase hover:text-pink-500">Faq</a>
+
+            <a href="#" class="block py-1 uppercase hover:text-pink-500"
+              >Blog</a
+            >
+            <a href="#" class="block py-1 uppercase hover:text-pink-500"
+              >Single Post</a
+            >
+          </div>
+
+          <a href="#" class="block py-2 uppercase hover:text-pink-900"
+            >Contact</a
+          >
+
+          <div class="flex items-center gap-3 pt-3">
+            <button
+              class="w-11 h-11 flex items-center justify-center bg-gray-800 text-white rounded-md hover:bg-pink-400"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
+                />
+              </svg>
+            </button>
+            <button
+              class="relative flex items-center gap-2 bg-pink-300 text-white font-semibold px-5 py-3 rounded-md"
+            >
+              <span>$0.00</span>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              <span
+                class="absolute -top-2 -right-2 bg-gray-900 text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center"
+                >0</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section
+      class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 bg-gray-200"
+    >
+      <img
+        src="asset/tropical-jungle-monstera-leaf-2021-08-27-09-32-56-utc.png"
+        alt=""
+        class="absolute -top-8 -left-12 w-52 sm:w-72 lg:w-80 opacity-90 pointer-events-none select-none z-0"
+      />
+      <img
+        src="asset/Leaf4.png"
+        alt=""
+        class="absolute -bottom-12 -right-12 w-44 sm:w-64 lg:w-72 opacity-90 pointer-events-none select-none z-0"
+      />
+
+      <div class="relative z-10 text-center">
+        <h1
+          class="mb-5 text-gray-700 text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight tracking-wider"
+        >
+          About Us
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-500 font-medium tracking-wider">
+          <a class="text-pink-300" href="#">HOME</a> / ABOUT
+        </p>
+      </div>
+    </section>
+
+    <!-- ABOUT TASYA -->
+    <section
+      class="relative overflow-hidden py-14 lg:py-16 px-6 lg:px-12 bg-white"
+    >
+      <div
+        class="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center lg:items-stretch"
+      >
+        <div
+          class="reveal reveal-left reveal-delay-1 relative self-start h-[320px] sm:h-[420px] md:h-[480px] lg:h-[560px]"
+        >
+          <div
+            class="absolute inset-4 sm:inset-6 lg:inset-8 bg-pink-100 rounded-t-[6rem] sm:rounded-t-[8rem] lg:rounded-t-[10rem] scale-95 -z-10"
+          ></div>
+          <img
+            src="asset/beautiful-long-smooth-hair-woman-happy-clean-skin-2022-01-29-07-01-13-utc-2.png"
+            alt="Model with natural skincare glow"
+            class="relative z-10 w-full h-full object-cover rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem]"
+          />
+          <img
+            src="asset/flower1.png"
+            alt=""
+            class="absolute bottom-0 right-2 sm:right-4 w-28 sm:w-40 lg:w-64 z-20 pointer-events-none select-none"
+          />
+        </div>
+
+        <div
+          class="reveal reveal-right reveal-delay-1 order-1 lg:order-2 text-center lg:text-left lg:h-[560px] lg:flex lg:flex-col lg:justify-between"
+        >
+          <div>
+            <p
+              class="text-pink-400 text-sm tracking-widest uppercase font-semibold mb-4"
+            >
+              About Tasya
+            </p>
+
+            <h2
+              class="text-gray-700 font-mono text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight"
+            >
+              We Use Pure &amp; Natural Ingredients
+            </h2>
+
+            <p
+              class="text-base sm:text-lg text-gray-600 mb-4 max-w-md mx-auto lg:mx-0 font-medium"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              non maximus nisl. Vivamus imperdiet porttitor lorem.
+            </p>
+
+            <p
+              class="text-base sm:text-lg text-gray-600 max-w-md mx-auto lg:mx-0"
+            >
+              Duis vitae fermentum urna. Maecenas venenatis feugiat arcu et
+              sodales. Integer non ex vel ante vulputate porttitor praesent
+              aliquet elit sit amet enim cursus, pharetra ornare nisl lacinia.
+              Pellentesque sed magna posuere.
+            </p>
+          </div>
+
+          <div>
+            <div
+              class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 sm:gap-4 mt-6 lg:mt-2"
+            >
+              <p
+                class="border-l-2 border-pink-300 pl-4 text-gray-500 text-base text-center sm:text-left max-w-xs"
+              >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+              <img
+                class="w-[100px] sm:w-[120px]"
+                src="asset/Autograph.png"
+                alt=""
+              />
+            </div>
+
+            <div
+              class="grid grid-cols-3 gap-3 sm:gap-4 mt-6 max-w-md mx-auto lg:mx-0 rounded-2xl"
+            >
+              <div
+                class="bg-pink-300 text-white rounded-2xl shadow-md px-3 py-5 sm:py-6 text-center"
+              >
+                <h2
+                  class="text-2xl sm:text-3xl font-bold mb-1 count-up"
+                  data-target="4.8"
+                  data-decimals="1"
+                >
+                  0
+                </h2>
+                <p
+                  class="text-[11px] sm:text-xs font-medium tracking-wide uppercase leading-tight"
+                >
+                  12,000+ Ratings
+                </p>
+              </div>
+              <div
+                class="bg-pink-300 text-white rounded-2xl shadow-md px-3 py-5 sm:py-6 text-center"
+              >
+                <h2
+                  class="text-2xl sm:text-3xl font-bold mb-1 count-up"
+                  data-target="25"
+                  data-suffix="+"
+                >
+                  0
+                </h2>
+                <p
+                  class="text-[11px] sm:text-xs font-medium tracking-wide uppercase leading-tight"
+                >
+                  Product Health
+                </p>
+              </div>
+              <div
+                class="bg-pink-300 text-white rounded-2xl shadow-md px-3 py-5 sm:py-6 text-center"
+              >
+                <h2
+                  class="text-2xl sm:text-3xl font-bold mb-1 count-up"
+                  data-target="15"
+                  data-suffix="K"
+                >
+                  0
+                </h2>
+                <p
+                  class="text-[11px] sm:text-xs font-medium tracking-wide uppercase leading-tight"
+                >
+                  Sales Worldwide
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Count-up animation script (only needs to be included once per page) -->
+    <script>
+      (function () {
+        const counters = document.querySelectorAll(".count-up");
+        if (counters.length === 0) return;
+
+        function animateCounter(el) {
+          const target = parseFloat(el.dataset.target);
+          const decimals = parseInt(el.dataset.decimals || "0", 10);
+          const suffix = el.dataset.suffix || "";
+          const duration = 1500;
+          const startTime = performance.now();
+
+          function tick(now) {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = target * eased;
+            el.textContent = value.toFixed(decimals) + suffix;
+
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            } else {
+              el.textContent = target.toFixed(decimals) + suffix;
+            }
+          }
+          requestAnimationFrame(tick);
+        }
+
+        if (!("IntersectionObserver" in window)) {
+          counters.forEach(animateCounter);
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.4 },
+        );
+
+        counters.forEach((el) => observer.observe(el));
+      })();
+    </script>
+
+    <section
+      class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 bg-gray-200"
+    >
+      <img
+        src="asset/flower2.png"
+        alt=""
+        class="absolute -top-6 -left-10 w-40 sm:w-56 opacity-90 pointer-events-none select-none z-0"
+      />
+      <img
+        src="asset/Leaf4.png"
+        alt=""
+        class="absolute -bottom-10 -right-10 w-32 sm:w-48 opacity-90 pointer-events-none select-none z-0"
+      />
+      <div
+        class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center lg:place-items-stretch"
+      >
+        <div class="reveal reveal-left text-center lg:text-left">
+          <p
+            class="text-pink-400 tracking-widest text-xl font-semibold uppercase mb-4"
+          >
+            WHY CHOOSE US
+          </p>
+          <h1
+            class="text-xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 leading-tight mb-6 font-mono"
+          >
+            Beauty is power, a smile is its sword<br class="hidden lg:block" />
+          </h1>
+          <p class="text-gray-500 mb-6 mx-auto lg:mx-0 font-medium">
+            Pellentesque vitae diam auctor justo mollis mattis. Pellentesque
+            habitant morbi tristique senectus et netus et malesuada fames ac
+            turpis egestas. Phasellus consectetur maximus nulla a ullamcorper.
+          </p>
+          <p class="text-gray-500 mb-8 mx-auto lg:mx-0">
+            Orci varius natoque penatibus et magnis dis parturient montes,
+            nascetur ridiculus mus. Mauris efficitur vulputate justo quis
+            auctor. Pellentesque vitae lectus dui. Vivamus ullamcorper nunc
+            tortor, vitae tempus quam fermentum at. Suspendisse faucibus maximus
+            metus, nec sagittis nisi gravida id.
+          </p>
+          <div
+            class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6"
+          >
+            <button
+              class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-4 rounded-full"
+            >
+              Explore More
+            </button>
+            <button
+              class="flex items-center gap-3 text-gray-700 font-medium uppercase text-sm tracking-wide hover:text-pink-400"
+            >
+              <span
+                class="w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center"
+                >▶</span
+              >
+              Our Video
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="reveal reveal-right grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6"
+        >
+          <div class="bg-white rounded-3xl shadow-lg p-5 sm:p-6 lg:p-8">
+            <i
+              class="bi bi-leaf-fill text-pink-400 text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4 block"
+            ></i>
+            <h2
+              class="text-base sm:text-lg lg:text-xl font-bold text-gray-800 mb-2"
+            >
+              100% Organic
+            </h2>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-lg p-5 sm:p-6 lg:p-8">
+            <i
+              class="bi bi-heart-pulse-fill text-pink-400 text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4 block"
+            ></i>
+            <h2
+              class="text-base sm:text-lg lg:text-xl font-bold text-gray-800 mb-2"
+            >
+              Improve Health
+            </h2>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col items-center justify-center text-center px-4 py-4 sm:py-0"
+          >
+            <h2
+              class="text-pink-400 text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-2 count-up"
+              data-target="10"
+              data-suffix="+"
+            >
+              0
+            </h2>
+            <p class="text-gray-800 font-bold text-base sm:text-lg">
+              Years Experience
+            </p>
+          </div>
+
+          <div class="bg-white rounded-3xl shadow-lg p-5 sm:p-6 lg:p-8">
+            <i
+              class="bi bi-shield-shaded text-pink-400 text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4 block"
+            ></i>
+            <h2
+              class="text-base sm:text-lg lg:text-xl font-bold text-gray-800 mb-2"
+            >
+              Biological Safe
+            </h2>
+            <p class="text-sm text-gray-500 leading-relaxed">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function () {
+        const counters = document.querySelectorAll(".count-up");
+        if (counters.length === 0) return;
+
+        function animateCounter(el) {
+          const target = parseFloat(el.dataset.target);
+          const decimals = parseInt(el.dataset.decimals || "0", 10);
+          const suffix = el.dataset.suffix || "";
+          const duration = 1500;
+          const startTime = performance.now();
+
+          function tick(now) {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            const value = target * eased;
+            el.textContent = value.toFixed(decimals) + suffix;
+
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            } else {
+              el.textContent = target.toFixed(decimals) + suffix;
+            }
+          }
+          requestAnimationFrame(tick);
+        }
+
+        if (!("IntersectionObserver" in window)) {
+          counters.forEach(animateCounter);
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.4 },
+        );
+
+        counters.forEach((el) => observer.observe(el));
+      })();
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white">
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-16 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
+      >
+        <div>
+          <img
+            class="w-[220px] mb-4"
+            src="asset/Logo2.png"
+            alt="Tasya Beauty logo"
+          />
+          <p class="text-gray-300 text-[16px] leading-relaxed">
+            Suspendisse congue tincidunt nisi, in eleifend metus placerat eu.
+            Nunc eget tristique nisi. Nunc a eros vitae magna bibendum tempus.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-xl font-bold mb-5">Quick Link</h2>
+          <ul class="space-y-3 text-gray-200">
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400 text-xl"></i> About
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400 text-xl"></i> Product
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400 text-xl"></i> Search
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400 text-xl"></i> Contact
+            </li>
+          </ul>
+        </div>
+
+        <!-- Information -->
+        <div>
+          <h2 class="text-xl font-bold mb-5">Information</h2>
+          <ul class="space-y-3 text-gray-200">
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400"></i> Terms &amp;
+              Conditions
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400"></i> Disclaimer
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400"></i> Support
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400"></i> FAQ
+            </li>
+          </ul>
+        </div>
+
+        <!-- Get In Touch -->
+        <div>
+          <h2 class="text-xl font-bold mb-5">Get In Touch</h2>
+          <ul class="space-y-3 text-gray-200 mb-6">
+            <li class="flex items-center gap-3">
+              <i class="bi bi-geo-alt-fill text-pink-400 text-xl"></i> 99 Roving
+              St., Pku
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-telephone-fill text-pink-400 text-xl"></i>
+              <a
+                href="tel:+123456789"
+                class="hover:text-pink-400 transition-colors"
+                >+123-456-789</a
+              >
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-envelope-fill text-pink-400 text-xl"></i>
+              hello@awesomesite.com
+            </li>
+          </ul>
+
+          <h3 class="font-bold mb-3">Social media :</h3>
+          <div class="flex items-center gap-3">
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-400 hover:bg-pink-500 transition-colors"
+            >
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Twitter"
+              class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-400 hover:bg-pink-500 transition-colors"
+            >
+              <i class="bi bi-twitter"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="YouTube"
+              class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-400 hover:bg-pink-500 transition-colors"
+            >
+              <i class="bi bi-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-gray-700">
+        <div
+          class="max-w-7xl mx-auto px-6 lg:px-16 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-300"
+        >
+          <p>
+            &copy;Copyright 2022. All Rights Reserved.
+            <a href="#" class="text-pink-400 hover:underline">Rometheme</a>
+          </p>
+          <p class="flex items-center gap-3">
+            <a href="#" class="hover:text-pink-400 transition-colors"
+              >Privacy Policy</a
+            >
+            <span class="text-gray-500">|</span>
+            <a href="#" class="hover:text-pink-400 transition-colors"
+              >Terms of use</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- FAQ script -->
+    <script>
+      document.querySelectorAll(".faq-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const item = toggle.closest(".faq-item");
+          const content = item.querySelector(".faq-content");
+          const iconWrap = item.querySelector(".faq-icon-wrap");
+          const icon = item.querySelector(".faq-icon");
+          const label = item.querySelector(".faq-label");
+          const isOpen = item.classList.contains("faq-open");
+
+          // Reset every item first
+          document.querySelectorAll(".faq-item").forEach((el) => {
+            el.classList.remove("faq-open");
+            el.querySelector(".faq-content").style.maxHeight = null;
+
+            const w = el.querySelector(".faq-icon-wrap");
+            w.classList.remove("bg-pink-400", "border-pink-400", "text-white");
+            w.classList.add("border-pink-300", "text-pink-400");
+
+            // reset icon back to chevron-up
+            const ic = el.querySelector(".faq-icon");
+            ic.classList.remove("bi-chevron-down");
+            ic.classList.add("bi-chevron-up");
+
+            const l = el.querySelector(".faq-label");
+            l.classList.remove("text-pink-400");
+            l.classList.add("text-gray-700");
+          });
+
+          // Open the clicked one if it wasn't already open
+          if (!isOpen) {
+            item.classList.add("faq-open");
+            content.style.maxHeight = content.scrollHeight + "px";
+
+            iconWrap.classList.remove("border-pink-300", "text-pink-400");
+            iconWrap.classList.add(
+              "bg-pink-400",
+              "border-pink-400",
+              "text-white",
+            );
+
+            // swap to chevron-down when open
+            icon.classList.remove("bi-chevron-up");
+            icon.classList.add("bi-chevron-down");
+
+            label.classList.remove("text-gray-700");
+            label.classList.add("text-pink-400");
+          }
+        });
+      });
+    </script>
+
+    <!-- navbar mobile script -->
+    <script>
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      document.querySelectorAll(".mobile-dropdown-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const panel = btn.nextElementSibling;
+          panel.classList.toggle("hidden");
+          const icon = btn.querySelector("svg");
+          icon.classList.toggle("rotate-180");
+        });
+      });
+
+      // Example: cart count hook (increment on cart button click, for demo purposes)
+      let count = 0;
+      document
+        .querySelectorAll("#cartCount, .lg\\:hidden .absolute")
+        .forEach(() => {});
+    </script>
+
+    <!-- Scroll reveal animation script  -->
+    <script>
+      (function () {
+        const revealEls = document.querySelectorAll(".reveal");
+
+        if (!("IntersectionObserver" in window) || revealEls.length === 0) {
+          revealEls.forEach((el) => el.classList.add("in-view"));
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            root: null,
+            rootMargin: "0px 0px -10% 0px",
+            threshold: 0.15,
+          },
+        );
+
+        revealEls.forEach((el) => {
+          if (el.closest("footer")) return; // never animate footer content
+          observer.observe(el);
+        });
+      })();
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
