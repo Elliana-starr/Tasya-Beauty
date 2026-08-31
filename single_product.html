@@ -50,8 +50,6 @@
       .reveal-delay-2.in-view { transition-delay: 0.2s; }
       .reveal-delay-3.in-view { transition-delay: 0.3s; }
 
-      /* Stagger children: put .reveal (+ any variant) on the wrapper,
-         and .reveal-item on each child you want to cascade in */
       .reveal-item {
         opacity: 0;
         transform: translateY(35px);
@@ -78,10 +76,73 @@
           transform: none !important;
         }
       }
+
+      /* ---- Product image hover zoom ---- */
+      .zoom-frame {
+        position: relative;
+        overflow: hidden;
+        cursor: zoom-in;
+        border-radius: 1rem;
+      }
+      .zoom-frame img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transform-origin: center center;
+        transform: scale(1);
+        transition: transform 0.15s ease-out;
+        will-change: transform;
+      }
+      .zoom-frame.is-zoomed img {
+        transform: scale(2.2);
+      }
+      .zoom-frame .zoom-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 9999px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+        pointer-events: none;
+        z-index: 5;
+      }
+
+      /* Quantity stepper */
+      .qty-input::-webkit-outer-spin-button,
+      .qty-input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      .qty-input {
+        -moz-appearance: textfield;
+      }
+
+      /* Tabs underline */
+      .tab-btn {
+        position: relative;
+        padding-bottom: 0.9rem;
+      }
+      .tab-btn.active {
+        color: #f472b6;
+      }
+      .tab-btn.active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 2px;
+        background: #f472b6;
+      }
     </style>
 </head>
 <body class="bg-white">
-    
+
 
  <header class="w-full border-b border-gray-100 relative z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -400,11 +461,156 @@
 </section>
 
 
+<!-- PRODUCTS -->
+<section class="px-6 lg:px-16 py-16 lg:py-24">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+    <!-- LEFT: product info -->
+    <div class="order-2 lg:order-1">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-4">Sunscreen</h1>
+
+      <p class="text-2xl font-semibold text-gray-800 mb-5">$15.00</p>
+
+      <div class="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-gray-600 mb-8">
+        <span class="font-semibold text-gray-800">SKU</span>
+        <span>RTM009</span>
+        <span class="text-gray-300 mx-1">|</span>
+        <span class="font-semibold text-gray-800">Category</span>
+        <a href="#" class="text-pink-400 hover:underline">Face</a>
+        <span class="text-gray-300 mx-1">|</span>
+        <span class="font-semibold text-gray-800">Tag</span>
+        <a href="#" class="text-pink-400 hover:underline">New Release</a>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex items-center gap-8 border-b border-gray-200 mb-6 text-sm font-semibold uppercase tracking-wide">
+        <button type="button" class="tab-btn active text-pink-400" data-tab="description">Description</button>
+        <button type="button" class="tab-btn text-gray-700 hover:text-pink-400 transition" data-tab="reviews">Reviews (0)</button>
+      </div>
+
+      <!-- Tab panels -->
+      <div id="tab-description" class="tab-panel">
+        <h2 class="text-xl font-bold text-gray-800 mb-3">Description</h2>
+        <p class="text-gray-500 leading-relaxed">
+          Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+          per inceptos himenaeos. Morbi vestibulum erat sit amet diam tincidunt tincidunt.
+          In venenatis sem et est elementum ornare. Ut euismod ex vel neque eleifend, sit amet
+          accumsan erat tincidunt. Praesent condimentum molestie porta. Nulla quis odio sed
+          ipsum aliquet lobortis eu eu lectus. Suspendisse semper metus sit amet ullamcorper
+          facilisis. Aliquam eu rhoncus erat, at aliquet diam. Nunc a feugiat risus, vitae
+          semper tortor. Proin non diam eu purus facilisis consectetur cursus ac odio. Donec
+          aliquet vel lorem at rhoncus. Phasellus lobortis finibus lorem non dictum. Quisque
+          eu urna quis enim mollis suscipit. Fusce laoreet a nibh ac luctus. Maecenas in
+          lorem tortor.
+        </p>
+      </div>
+
+      <div id="tab-reviews" class="tab-panel hidden">
+        <h2 class="text-xl font-bold text-gray-800 mb-3">Reviews</h2>
+        <p class="text-gray-500">There are no reviews yet.</p>
+      </div>
+
+      <!-- Quantity + Add to cart -->
+      <div class="flex items-center gap-4 mt-10">
+        <div class="flex items-center border border-gray-300 rounded-md">
+          <button id="qtyMinus" type="button" class="w-10 h-12 flex items-center justify-center text-gray-600 hover:text-pink-400 text-lg">−</button>
+          <input id="qtyInput" type="number" min="1" value="1" class="qty-input w-12 h-12 text-center border-0 focus:outline-none focus:ring-0 text-gray-800 font-medium" />
+          <button id="qtyPlus" type="button" class="w-10 h-12 flex items-center justify-center text-gray-600 hover:text-pink-400 text-lg">+</button>
+        </div>
+
+        <button id="addToCartBtn" class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-10 py-4 rounded-full">
+          Add to cart
+        </button>
+      </div>
+    </div>
+
+    <!-- RIGHT: product image with hover zoom -->
+    <div class="order-1 lg:order-2">
+      <div id="zoomFrame" class="zoom-frame bg-gray-100">
+        <img id="zoomImg" src="asset/PrdSunscreen-600x600.png" alt="Sunscreen">
+        <span class="zoom-badge">
+          <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+          </svg>
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 bg-gray-200">
+  <div class="reveal relative z-10 text-center">
+    <h2 class="text-3xl sm:text-5xl lg:text-6xl text-gray-700 tracking-wide leading-tight font-medium">
+      Related Products
+    </h2>
+  </div>
+
+  <div class="relative z-10 mt-12">
+    <div class="reveal card-group grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
+        <img src="asset/PrdBody-Scrub-600x600.png" class="card-img-top mx-auto mb-4" alt="Body Scrub">
+        <div class="card-body">
+          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Body Scrub</h5>
+          <p class="card-text text-sm mb-4 text-gray-800 font-semibold">$20.00</p>
+        </div>
+        <div class="card-footer">
+          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        </div>
+      </div>
+
+      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
+        <img src="asset/PrdFace-Oil-600x600.png" class="card-img-top mx-auto mb-4" alt="Face Oil">
+        <div class="card-body">
+          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Face Oil</h5>
+          <p class="card-text text-sm mb-4 text-gray-800 font-semibold">$12.00</p>
+        </div>
+        <div class="card-footer">
+          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        </div>
+      </div>
+
+      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
+        <img src="asset/PrdFacial-Wash-600x600.png" class="card-img-top mx-auto mb-4" alt="Facial Wash">
+        <div class="card-body">
+          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Facial Wash</h5>
+          <p class="card-text text-sm mb-4 text-gray-800 font-semibold">$20.00</p>
+        </div>
+        <div class="card-footer">
+          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        </div>
+      </div>
+
+      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
+        <img src="asset/PrdToner-600x600.png" class="card-img-top mx-auto mb-4" alt="Toner">
+        <div class="card-body">
+          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Toner</h5>
+          <p class="card-text text-sm mb-4">
+            <del class="text-gray-400 font-medium">$20.00</del>
+            <span class="text-gray-800 font-semibold underline">$12.00</span>
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="bg-gray-900 text-white">
   <div class="max-w-7xl mx-auto px-6 lg:px-16 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-   
+
     <div>
       <img class="w-[220px] mb-4" src="asset/Logo2.png" alt="Tasya Beauty logo" />
       <p class="text-gray-300 text-[16px] leading-relaxed">
@@ -412,7 +618,7 @@
       </p>
     </div>
 
-   
+
     <div>
       <h2 class="text-xl font-bold mb-5">Quick Link</h2>
       <ul class="space-y-3 text-gray-200">
@@ -494,7 +700,7 @@
         <span class="text-gray-500">|</span>
         <a href="#" class="hover:text-pink-400 transition-colors">Terms of use</a>
       </p>
-    
+
     </div>
   </div>
 </footer>
@@ -552,6 +758,58 @@
         revealEls.forEach((el) => {
           if (el.closest("footer")) return;
           observer.observe(el);
+        });
+      })();
+    </script>
+
+    <!-- Product tabs script -->
+    <script>
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active", "text-pink-400"));
+          document.querySelectorAll(".tab-panel").forEach((p) => p.classList.add("hidden"));
+
+          btn.classList.add("active", "text-pink-400");
+          const target = document.getElementById("tab-" + btn.dataset.tab);
+          if (target) target.classList.remove("hidden");
+        });
+      });
+    </script>
+
+    <!-- Quantity stepper script -->
+    <script>
+      const qtyInput = document.getElementById("qtyInput");
+      document.getElementById("qtyMinus").addEventListener("click", () => {
+        const val = Math.max(1, (parseInt(qtyInput.value, 10) || 1) - 1);
+        qtyInput.value = val;
+      });
+      document.getElementById("qtyPlus").addEventListener("click", () => {
+        const val = (parseInt(qtyInput.value, 10) || 1) + 1;
+        qtyInput.value = val;
+      });
+    </script>
+
+    <!-- Product image hover-zoom script -->
+    <script>
+      (function () {
+        const frame = document.getElementById("zoomFrame");
+        const img = document.getElementById("zoomImg");
+        if (!frame || !img) return;
+
+        frame.addEventListener("mouseenter", () => {
+          frame.classList.add("is-zoomed");
+        });
+
+        frame.addEventListener("mousemove", (e) => {
+          const rect = frame.getBoundingClientRect();
+          const x = ((e.clientX - rect.left) / rect.width) * 100;
+          const y = ((e.clientY - rect.top) / rect.height) * 100;
+          img.style.transformOrigin = `${x}% ${y}%`;
+        });
+
+        frame.addEventListener("mouseleave", () => {
+          frame.classList.remove("is-zoomed");
+          img.style.transformOrigin = "center center";
         });
       })();
     </script>
