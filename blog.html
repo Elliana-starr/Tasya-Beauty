@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tasya Beauty-Single Product</title>
-     <script src="https://cdn.tailwindcss.com"></script>
+    <title>Tasya Beauty - Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
+    <!-- <style>
       body {
         font-family: "Poppins", system-ui, sans-serif;
       }
@@ -139,12 +140,12 @@
         height: 2px;
         background: #f472b6;
       }
-    </style>
+    </style> -->
 </head>
 <body class="bg-white">
 
-<!-- NAVBAR -->
- <header class="w-full border-b border-gray-100 relative z-50">
+     <!-- NAVBAR -->
+    <header class="w-full border-b border-gray-100 relative z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
           <!-- Logo -->
@@ -325,7 +326,9 @@
         <div
           class="px-4 py-4 space-y-1 uppercase text-sm font-medium text-gray-700 uppercase"
         >
-          <a href="index.html" class="block py-2 hover:text-pink-400">Homepage</a>
+          <a href="index.html" class="block py-2 hover:text-pink-400"
+            >Homepage</a
+          >
 
           <button
             class="w-full flex justify-between items-center py-2 mobile-dropdown-btn uppercase hover:text-pink-900"
@@ -348,8 +351,17 @@
           <div
             class="hidden pl-4 pb-2 space-y-1 normal-case text-gray-500 mobile-dropdown-panel"
           >
-            <a href="product.html" class="block py-1 uppercase  hover:text-pink-500"> Products</a>
-            <a href="single_product.html" class="block py-1 uppercase  hover:text-pink-500">Single Products</a>
+            <a
+              href="product.html"
+              class="block py-1 uppercase hover:text-pink-500"
+            >
+              Products</a
+            >
+            <a
+              href="single_product.html"
+              class="block py-1 uppercase hover:text-pink-500"
+              >Single Products</a
+            >
           </div>
 
           <button
@@ -373,17 +385,17 @@
           <div
             class="hidden pl-4 pb-2 space-y-1 normal-case text-gray-500 mobile-dropdown-panel"
           >
-            <a href="about.html" class="block py-1 uppercase hover:text-pink-500"
+            <a
+              href="about.html"
+              class="block py-1 uppercase hover:text-pink-500"
               >About</a
             >
-            <a href="faq.html" class="block py-1 uppercase hover:text-pink-500"
-              >Faq</a
-            >
-       
+            <a href="faq.html" class="block py-1 uppercase hover:text-pink-500">Faq</a>
+
             <a href="blog.html" class="block py-1 uppercase hover:text-pink-500"
               >Blog</a
             >
-            <a href="#" class="block py-1 uppercase hover:text-pink-500"
+            <a href="" class="block py-1 uppercase hover:text-pink-500"
               >Single Post</a
             >
           </div>
@@ -437,278 +449,309 @@
       </div>
     </header>
 
+    
+ <!-- HOME SECTION -->
+    <section
+      class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 bg-gray-200"
+    >
+      <img
+        src="asset/tropical-jungle-monstera-leaf-2021-08-27-09-32-56-utc.png"
+        alt=""
+        class="absolute -top-8 -left-12 w-52 sm:w-72 lg:w-80 opacity-90 pointer-events-none select-none z-0"
+      />
+      <img
+        src="asset/Leaf4.png"
+        alt=""
+        class="absolute -bottom-12 -right-12 w-44 sm:w-64 lg:w-72 opacity-90 pointer-events-none select-none z-0"
+      />
 
-    <!-- HOME SECTION -->
- <section class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 bg-gray-200">
+      <div class="relative z-10 text-center">
+        <h1
+          class="mb-5 text-gray-700 text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight tracking-wider"
+        >
+          Archives
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-500 font-medium tracking-wider">
+          <a class="text-pink-300" href="#">HOME</a> / BLOG
+        </p>
+      </div>
+    </section>
 
-  <img
-    src="asset/tropical-jungle-monstera-leaf-2021-08-27-09-32-56-utc.png"
-    alt=""
-    class="absolute -top-8 -left-12 w-52 sm:w-72 lg:w-80 opacity-90 pointer-events-none select-none z-0"
-  />
-  <img
-    src="asset/Leaf4.png"
-    alt=""
-    class="absolute -bottom-12 -right-12 w-44 sm:w-64 lg:w-72 opacity-90 pointer-events-none select-none z-0"
-  />
 
-  <div class="relative z-10 text-center">
-    <h1 class="mb-5 text-gray-700 text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight tracking-wider">
-        Single Product
-    </h1>
-    <p class="text-lg sm:text-xl text-gray-500 font-medium tracking-wider">
-      <a class="text-pink-300" href="#">HOME</a> / PRODUCT
+    
+<!-- LATEST NEWS -->
+<section class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 ">
+  <div class="reveal relative z-10 text-center max-w-2xl mx-auto mb-10">
+    <h2 class="uppercase text-3xl text-pink-400 font-semibold mb-4 tracking-widest">latest news</h2>
+    <p class="text-4xl font-bold text-gray-800 mb-4 leading-tight">Amazing Blog Post & Article</p>
+    <p class="text-sm text-gray-500 leading-relaxed">
+      Aenean porttitor, risus vitae semper ullamcorper, tellus felis sollicitudin mauris, eu mollis arcu sapien vel turpis.
+      Suspendisse maximus, quam et lacinia consequat, sapien turpis accumsan tellus.
     </p>
   </div>
 
-</section>
+  <div class="w-full mx-auto m-4 lg:m-8 px-2 sm:px-4 lg:px-6">
 
+  <div class="reveal reveal-scale bg-white rounded-[2rem] p-3 sm:p-4 lg:p-6">
 
-<!-- PRODUCTS -->
-<section class="px-6 lg:px-16 py-16 lg:py-24">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
 
-    <!-- LEFT: product info -->
-    <div class="order-2 lg:order-1">
-      <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-4">Sunscreen</h1>
-
-      <p class="text-2xl font-semibold text-gray-800 mb-5">$15.00</p>
-
-      <div class="flex flex-wrap items-center gap-x-2 gap-y-2 text-sm text-gray-600 mb-8">
-        <span class="font-semibold text-gray-800">SKU</span>
-        <span>RTM009</span>
-        <span class="text-gray-300 mx-1">|</span>
-        <span class="font-semibold text-gray-800">Category</span>
-        <a href="#" class="text-pink-400 hover:underline">Face</a>
-        <span class="text-gray-300 mx-1">|</span>
-        <span class="font-semibold text-gray-800">Tag</span>
-        <a href="#" class="text-pink-400 hover:underline">New Release</a>
-      </div>
-
-      <!-- Tabs -->
-      <div class="flex items-center gap-8 border-b border-gray-200 mb-6 text-sm font-semibold uppercase tracking-wide">
-        <button type="button" class="tab-btn active text-pink-400" data-tab="description">Description</button>
-        <button type="button" class="tab-btn text-gray-700 hover:text-pink-400 transition" data-tab="reviews">Reviews (0)</button>
-      </div>
-
-      <!-- Tab panels -->
-      <div id="tab-description" class="tab-panel">
-        <h2 class="text-xl font-bold text-gray-800 mb-3">Description</h2>
-        <p class="text-gray-500 leading-relaxed">
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-          per inceptos himenaeos. Morbi vestibulum erat sit amet diam tincidunt tincidunt.
-          In venenatis sem et est elementum ornare. Ut euismod ex vel neque eleifend, sit amet
-          accumsan erat tincidunt. Praesent condimentum molestie porta. Nulla quis odio sed
-          ipsum aliquet lobortis eu eu lectus. Suspendisse semper metus sit amet ullamcorper
-          facilisis. Aliquam eu rhoncus erat, at aliquet diam. Nunc a feugiat risus, vitae
-          semper tortor. Proin non diam eu purus facilisis consectetur cursus ac odio. Donec
-          aliquet vel lorem at rhoncus. Phasellus lobortis finibus lorem non dictum. Quisque
-          eu urna quis enim mollis suscipit. Fusce laoreet a nibh ac luctus. Maecenas in
-          lorem tortor.
-        </p>
-      </div>
-
-      <div id="tab-reviews" class="tab-panel hidden">
-        <h2 class="text-xl font-bold text-gray-800 mb-3">Reviews</h2>
-        <p class="text-gray-500">There are no reviews yet.</p>
-      </div>
-
-      <!-- Quantity + Add to cart -->
-      <div class="flex items-center gap-4 mt-10">
-        <div class="flex items-center border border-gray-300 rounded-md">
-          <button id="qtyMinus" type="button" class="w-10 h-12 flex items-center justify-center text-gray-600 hover:text-pink-400 text-lg">−</button>
-          <input id="qtyInput" type="number" min="1" value="1" class="qty-input w-12 h-12 text-center border-0 focus:outline-none focus:ring-0 text-gray-800 font-medium" />
-          <button id="qtyPlus" type="button" class="w-10 h-12 flex items-center justify-center text-gray-600 hover:text-pink-400 text-lg">+</button>
+      <!-- Card 1 -->
+      <div data-aos="fade-right" class="flex flex-col w-full bg-white rounded-2xl shadow-md  hover:shadow-lg hover:shadow-pink-300 transition-shadow duration-300 overflow-hidden">
+        <img src="asset/beautiful-young-woman-with-a-pink-larkspur-flower-2022-08-14-01-29-05-utc.jpg" class="w-full h-56 sm:h-64 lg:h-72 object-cover" alt="Card image">
+        <div class="flex flex-col flex-1 justify-between p-6">
+          <div>
+            <h5 class="text-xl font-semibold text-gray-800 mb-3">Kiss Your Thin Lips Goodbye!</h5>
+            <p class="text-base text-gray-500 mb-3">
+              Nam vel viverra libero, eget lobortis est. Proin blandit enim augue, non lobortis purus ultricies in. Donec ut venenatis justo. Vestibulum tellus lectus, feugiat nec, pretium quis, sem.
+            </p>
+          </div>
+          <a href="#">
+            <span class="text-pink-500 font-semibold text-base">Read More +</span>
+          </a>
         </div>
-
-        <button id="addToCartBtn" class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-10 py-4 rounded-full">
-          Add to cart
-        </button>
-      </div>
-    </div>
-
-    <!-- RIGHT: product image with hover zoom -->
-    <div class="order-1 lg:order-2">
-      <div id="zoomFrame" class="zoom-frame bg-gray-100">
-        <img id="zoomImg" src="asset/PrdSunscreen-600x600.png" alt="Sunscreen">
-        <span class="zoom-badge">
-          <svg class="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
-          </svg>
-        </span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- RELATED PRODUCTS -->
-<section class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 bg-gray-200">
-  <div class="reveal relative z-10 text-center">
-    <h2 class="text-3xl sm:text-5xl lg:text-6xl text-gray-700 tracking-wide leading-tight font-medium">
-      Related Products
-    </h2>
-  </div>
-
-  <div class="relative z-10 mt-12">
-    <div class="reveal card-group grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-
-      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
-        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
-        <img src="asset/PrdBody-Scrub-600x600.png" class="card-img-top mx-auto mb-4" alt="Body Scrub">
-        <div class="card-body">
-          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Body Scrub</h5>
-          <p class="card-text text-sm mb-4 text-gray-800 font-semibold">$20.00</p>
-        </div>
-        <div class="card-footer">
-          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        <div class="border-t border-gray-100 px-6 py-4">
+          <small class="text-gray-400 text-sm">October 25, 2025 <span><i class="bi bi-dot"></i></span> No Comments</small>
         </div>
       </div>
 
-      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
-        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
-        <img src="asset/PrdFace-Oil-600x600.png" class="card-img-top mx-auto mb-4" alt="Face Oil">
-        <div class="card-body">
-          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Face Oil</h5>
-          <p class="card-text text-sm mb-4 text-gray-800 font-semibold">$12.00</p>
+      <!-- Card 2 -->
+      <div data-aos="fade-left" class=" flex flex-col w-full bg-white rounded-2xl shadow-md overflow-hidden  hover:shadow-lg hover:shadow-pink-300 transition-shadow duration-300 " >
+        <img src="asset/young-beautiful-woman-with-a-bottle-of-perfume-2022-05-13-01-04-39-utc.jpg" class="w-full h-56 sm:h-64 lg:h-72 object-cover" alt="Body Soap">
+        <div class="flex flex-col flex-1 justify-between p-6">
+          <div>
+            <h5 class="text-xl font-semibold text-gray-800 mb-3">Enjoy The Stay, Love The Shine</h5>
+            <p class="text-base text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
+          </div>
+          <a href="#">
+            <span class="text-pink-500 font-semibold text-base">Read More +</span>
+          </a>
         </div>
-        <div class="card-footer">
-          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
-        </div>
-      </div>
-
-      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
-        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
-        <img src="asset/PrdFacial-Wash-600x600.png" class="card-img-top mx-auto mb-4" alt="Facial Wash">
-        <div class="card-body">
-          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Facial Wash</h5>
-          <p class="card-text text-sm mb-4 text-gray-800 font-semibold">$20.00</p>
-        </div>
-        <div class="card-footer">
-          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        <div class="border-t border-gray-100 px-6 py-4">
+          <small class="text-gray-400 text-sm">October 23, 2025 <span><i class="bi bi-dot"></i></span> No Comments</small>
         </div>
       </div>
 
-      <div class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
-        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
-        <img src="asset/PrdToner-600x600.png" class="card-img-top mx-auto mb-4" alt="Toner">
-        <div class="card-body">
-          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Toner</h5>
-          <p class="card-text text-sm mb-4">
-            <del class="text-gray-400 font-medium">$20.00</del>
-            <span class="text-gray-800 font-semibold underline">$12.00</span>
-          </p>
+      <!-- Card 3 -->
+      <div data-aos="fade-right" class="flex flex-col w-full bg-white rounded-2xl shadow-md  hover:shadow-lg hover:shadow-pink-300 transition-shadow duration-300 overflow-hidden">
+        <img src="asset/young-girl-with-care-beautiful-healthy-clean-skin-2022-01-28-12-31-23-utc.jpg" class="w-full h-56 sm:h-64 lg:h-72 object-cover" alt="Toner">
+        <div class="flex flex-col flex-1 justify-between p-6">
+          <div>
+            <h5 class="text-xl font-semibold text-gray-800 mb-3">Sparkle On The Inside And Out</h5>
+            <p class="text-base text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
+          </div>
+          <a href="#">
+            <span class="text-pink-500 font-semibold text-base">Read More +</span>
+          </a>
         </div>
-        <div class="card-footer">
-          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        <div class="border-t border-gray-100 px-6 py-4">
+          <small class="text-gray-400 text-sm">October 23, 2025 <span><i class="bi bi-dot"></i></span> No Comments</small>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div data-aos="fade-left" class="flex flex-col w-full bg-white rounded-2xl shadow-md  hover:shadow-lg hover:shadow-pink-300 transition-shadow duration-300 overflow-hidden">
+        <img src="asset/beautiful-african-woman-black-t-shirt-portrait-afr-2022-01-29-07-01-03-utc.jpg" class="w-full h-56 sm:h-64 lg:h-72 object-cover" alt="Night Cream">
+        <div class="flex flex-col flex-1 justify-between p-6">
+          <div>
+            <h5 class="text-xl font-semibold text-gray-800 mb-3">Inner Beauty Is The Best Beauty</h5>
+            <p class="text-base text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
+          </div>
+          <a href="#">
+            <span class="text-pink-500 font-semibold text-base">Read More +</span>
+          </a>
+        </div>
+        <div class="border-t border-gray-100 px-6 py-4">
+          <small class="text-gray-400 text-sm">October 23, 2025 <span><i class="bi bi-dot"></i></span> No Comments</small>
         </div>
       </div>
 
     </div>
+
   </div>
-</section>
+</div>  
+
+ </section>
 
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-white">
-  <div class="max-w-7xl mx-auto px-6 lg:px-16 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer class="bg-gray-900 text-white">
+      <div
+        class="max-w-7xl mx-auto px-6 lg:px-16 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
+      >
+        <div>
+          <img
+            class="w-[220px] mb-4"
+            src="asset/Logo2.png"
+            alt="Tasya Beauty logo"
+          />
+          <p class="text-gray-300 text-[16px] leading-relaxed">
+            Suspendisse congue tincidunt nisi, in eleifend metus placerat eu.
+            Nunc eget tristique nisi. Nunc a eros vitae magna bibendum tempus.
+          </p>
+        </div>
 
+        <div>
+          <h2 class="text-xl font-bold mb-5">Quick Link</h2>
+          <ul class="space-y-3 text-gray-200">
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400 text-xl"></i> About
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400 text-xl"></i> Product
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400 text-xl"></i> Search
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400 text-xl"></i> Contact
+            </li>
+          </ul>
+        </div>
 
-    <div>
-      <img class="w-[220px] mb-4" src="asset/Logo2.png" alt="Tasya Beauty logo" />
-      <p class="text-gray-300 text-[16px] leading-relaxed">
-        Suspendisse congue tincidunt nisi, in eleifend metus placerat eu. Nunc eget tristique nisi. Nunc a eros vitae magna bibendum tempus.
-      </p>
-    </div>
+        <!-- Information -->
+        <div>
+          <h2 class="text-xl font-bold mb-5">Information</h2>
+          <ul class="space-y-3 text-gray-200">
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400"></i> Terms &amp;
+              Conditions
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400"></i> Disclaimer
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400"></i> Support
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-check-lg text-pink-400"></i> FAQ
+            </li>
+          </ul>
+        </div>
 
+        <!-- Get In Touch -->
+        <div>
+          <h2 class="text-xl font-bold mb-5">Get In Touch</h2>
+          <ul class="space-y-3 text-gray-200 mb-6">
+            <li class="flex items-center gap-3">
+              <i class="bi bi-geo-alt-fill text-pink-400 text-xl"></i> 99 Roving
+              St., Pku
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-telephone-fill text-pink-400 text-xl"></i>
+              <a
+                href="tel:+123456789"
+                class="hover:text-pink-400 transition-colors"
+                >+123-456-789</a
+              >
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="bi bi-envelope-fill text-pink-400 text-xl"></i>
+              hello@awesomesite.com
+            </li>
+          </ul>
 
-    <div>
-      <h2 class="text-xl font-bold mb-5">Quick Link</h2>
-      <ul class="space-y-3 text-gray-200">
-        <li class="flex items-center gap-3">
-          <i class="bi bi-check-lg text-pink-400 text-xl "></i> About
-        </li>
-        <li class="flex items-center gap-3">
-          <i class="bi bi-check-lg text-pink-400 text-xl"></i> Product
-        </li>
-        <li class="flex items-center gap-3">
-          <i class="bi bi-check-lg text-pink-400 text-xl"></i> Search
-        </li>
-        <li class="flex items-center gap-3">
-          <i class="bi bi-check-lg text-pink-400 text-xl"></i> Contact
-        </li>
-      </ul>
-    </div>
-
-    <!-- Information -->
-    <div>
-      <h2 class="text-xl font-bold mb-5">Information</h2>
-      <ul class="space-y-3 text-gray-200">
-        <li class="flex items-center gap-3">
-          <i class="bi bi-check-lg text-pink-400"></i> Terms &amp; Conditions
-        </li>
-        <li class="flex items-center gap-3">
-          <i class="bi bi-check-lg text-pink-400"></i> Disclaimer
-        </li>
-        <li class="flex items-center gap-3">
-          <i class="bi bi-check-lg text-pink-400"></i> Support
-        </li>
-        <li class="flex items-center gap-3">
-          <i class="bi bi-check-lg text-pink-400"></i> FAQ
-        </li>
-      </ul>
-    </div>
-
-    <!-- Get In Touch -->
-    <div>
-      <h2 class="text-xl font-bold mb-5">Get In Touch</h2>
-      <ul class="space-y-3 text-gray-200 mb-6">
-        <li class="flex items-center gap-3">
-          <i class="bi bi-geo-alt-fill text-pink-400 text-xl"></i> 99 Roving St., Pku
-        </li>
-        <li class="flex items-center gap-3">
-          <i class="bi bi-telephone-fill text-pink-400 text-xl"></i>
-          <a href="tel:+123456789" class="hover:text-pink-400 transition-colors">+123-456-789</a>
-        </li>
-        <li class="flex items-center gap-3">
-          <i class="bi bi-envelope-fill text-pink-400 text-xl"></i> hello@awesomesite.com
-        </li>
-      </ul>
-
-      <h3 class="font-bold mb-3">Social media :</h3>
-      <div class="flex items-center gap-3">
-        <a href="#" aria-label="Facebook" class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-400 hover:bg-pink-500 transition-colors">
-          <i class="bi bi-facebook"></i>
-        </a>
-        <a href="#" aria-label="Twitter" class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-400 hover:bg-pink-500 transition-colors">
-          <i class="bi bi-twitter"></i>
-        </a>
-        <a href="#" aria-label="YouTube" class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-400 hover:bg-pink-500 transition-colors">
-          <i class="bi bi-youtube"></i>
-        </a>
+          <h3 class="font-bold mb-3">Social media :</h3>
+          <div class="flex items-center gap-3">
+            <a
+              href="#"
+              aria-label="Facebook"
+              class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-400 hover:bg-pink-500 transition-colors"
+            >
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="Twitter"
+              class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-400 hover:bg-pink-500 transition-colors"
+            >
+              <i class="bi bi-twitter"></i>
+            </a>
+            <a
+              href="#"
+              aria-label="YouTube"
+              class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-400 hover:bg-pink-500 transition-colors"
+            >
+              <i class="bi bi-youtube"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
 
-  </div>
+      <!-- Bottom bar -->
+      <div class="border-t border-gray-700">
+        <div
+          class="max-w-7xl mx-auto px-6 lg:px-16 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-300"
+        >
+          <p>
+            &copy;Copyright 2022. All Rights Reserved.
+            <a href="#" class="text-pink-400 hover:underline">Rometheme</a>
+          </p>
+          <p class="flex items-center gap-3">
+            <a href="#" class="hover:text-pink-400 transition-colors"
+              >Privacy Policy</a
+            >
+            <span class="text-gray-500">|</span>
+            <a href="#" class="hover:text-pink-400 transition-colors"
+              >Terms of use</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- FAQ script -->
+    <script>
+      document.querySelectorAll(".faq-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const item = toggle.closest(".faq-item");
+          const content = item.querySelector(".faq-content");
+          const iconWrap = item.querySelector(".faq-icon-wrap");
+          const icon = item.querySelector(".faq-icon");
+          const label = item.querySelector(".faq-label");
+          const isOpen = item.classList.contains("faq-open");
 
-  <!-- Bottom bar -->
-  <div class="border-t border-gray-700">
-    <div class="max-w-7xl mx-auto px-6 lg:px-16 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-300">
-      <p>
-        &copy;Copyright 2022. All Rights Reserved.
-        <a href="#" class="text-pink-400 hover:underline">Rometheme</a>
-      </p>
-      <p class="flex items-center gap-3">
-        <a href="#" class="hover:text-pink-400 transition-colors">Privacy Policy</a>
-        <span class="text-gray-500">|</span>
-        <a href="#" class="hover:text-pink-400 transition-colors">Terms of use</a>
-      </p>
+          // Reset every item first
+          document.querySelectorAll(".faq-item").forEach((el) => {
+            el.classList.remove("faq-open");
+            el.querySelector(".faq-content").style.maxHeight = null;
 
-    </div>
-  </div>
-</footer>
+            const w = el.querySelector(".faq-icon-wrap");
+            w.classList.remove("bg-pink-400", "border-pink-400", "text-white");
+            w.classList.add("border-pink-300", "text-pink-400");
 
-<!-- navbar mobile script -->
+            // reset icon back to chevron-up
+            const ic = el.querySelector(".faq-icon");
+            ic.classList.remove("bi-chevron-down");
+            ic.classList.add("bi-chevron-up");
+
+            const l = el.querySelector(".faq-label");
+            l.classList.remove("text-pink-400");
+            l.classList.add("text-gray-700");
+          });
+
+          // Open the clicked one if it wasn't already open
+          if (!isOpen) {
+            item.classList.add("faq-open");
+            content.style.maxHeight = content.scrollHeight + "px";
+
+            iconWrap.classList.remove("border-pink-300", "text-pink-400");
+            iconWrap.classList.add(
+              "bg-pink-400",
+              "border-pink-400",
+              "text-white",
+            );
+
+            // swap to chevron-down when open
+            icon.classList.remove("bi-chevron-up");
+            icon.classList.add("bi-chevron-down");
+
+            label.classList.remove("text-gray-700");
+            label.classList.add("text-pink-400");
+          }
+        });
+      });
+    </script>
+
+    <!-- navbar mobile script -->
     <script>
       const mobileMenuBtn = document.getElementById("mobileMenuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
@@ -732,7 +775,7 @@
         .forEach(() => {});
     </script>
 
-    <!-- Scroll reveal animation script (footer is intentionally excluded) -->
+    <!-- Scroll reveal animation script  -->
     <script>
       (function () {
         const revealEls = document.querySelectorAll(".reveal");
@@ -755,71 +798,28 @@
             root: null,
             rootMargin: "0px 0px -10% 0px",
             threshold: 0.15,
-          }
+          },
         );
 
         revealEls.forEach((el) => {
-          if (el.closest("footer")) return;
+          if (el.closest("footer")) return; // never animate footer content
           observer.observe(el);
         });
       })();
     </script>
 
-    <!-- Product tabs script -->
-    <script>
-      document.querySelectorAll(".tab-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          document.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active", "text-pink-400"));
-          document.querySelectorAll(".tab-panel").forEach((p) => p.classList.add("hidden"));
-
-          btn.classList.add("active", "text-pink-400");
-          const target = document.getElementById("tab-" + btn.dataset.tab);
-          if (target) target.classList.remove("hidden");
-        });
-      });
-    </script>
-
-    <!-- Quantity stepper script -->
-    <script>
-      const qtyInput = document.getElementById("qtyInput");
-      document.getElementById("qtyMinus").addEventListener("click", () => {
-        const val = Math.max(1, (parseInt(qtyInput.value, 10) || 1) - 1);
-        qtyInput.value = val;
-      });
-      document.getElementById("qtyPlus").addEventListener("click", () => {
-        const val = (parseInt(qtyInput.value, 10) || 1) + 1;
-        qtyInput.value = val;
-      });
-    </script>
-
-    <!-- Product image hover-zoom script -->
-    <script>
-      (function () {
-        const frame = document.getElementById("zoomFrame");
-        const img = document.getElementById("zoomImg");
-        if (!frame || !img) return;
-
-        frame.addEventListener("mouseenter", () => {
-          frame.classList.add("is-zoomed");
-        });
-
-        frame.addEventListener("mousemove", (e) => {
-          const rect = frame.getBoundingClientRect();
-          const x = ((e.clientX - rect.left) / rect.width) * 100;
-          const y = ((e.clientY - rect.top) / rect.height) * 100;
-          img.style.transformOrigin = `${x}% ${y}%`;
-        });
-
-        frame.addEventListener("mouseleave", () => {
-          frame.classList.remove("is-zoomed");
-          img.style.transformOrigin = "center center";
-        });
-      })();
-    </script>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Animation duration in milliseconds
+    easing: 'ease-in-out', // Easing function for the animation
+    once: true, // Whether animation should happen only once while scrolling down
+  });
+</script>
 </body>
 </html>

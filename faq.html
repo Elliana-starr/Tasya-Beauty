@@ -1,24 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tasya Beauty-About</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasya Beauty-FAQ</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
-      integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
-      integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
       body {
         font-family: "Poppins", system-ui, sans-serif;
@@ -28,9 +16,8 @@
       .reveal {
         opacity: 0;
         transform: translateY(50px);
-        transition:
-          opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-          transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+                    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
         will-change: opacity, transform;
       }
       .reveal.in-view {
@@ -59,61 +46,31 @@
         transform: scale(1);
       }
 
-      .reveal-delay-1.in-view {
-        transition-delay: 0.1s;
-      }
-      .reveal-delay-2.in-view {
-        transition-delay: 0.2s;
-      }
-      .reveal-delay-3.in-view {
-        transition-delay: 0.3s;
-      }
+      .reveal-delay-1.in-view { transition-delay: 0.1s; }
+      .reveal-delay-2.in-view { transition-delay: 0.2s; }
+      .reveal-delay-3.in-view { transition-delay: 0.3s; }
 
       .reveal-item {
         opacity: 0;
         transform: translateY(35px);
-        transition:
-          opacity 0.7s ease,
-          transform 0.7s ease;
+        transition: opacity 0.7s ease, transform 0.7s ease;
       }
       .in-view .reveal-item {
         opacity: 1;
         transform: translateY(0);
       }
-      .in-view .reveal-item:nth-child(1) {
-        transition-delay: 0.05s;
-      }
-      .in-view .reveal-item:nth-child(2) {
-        transition-delay: 0.13s;
-      }
-      .in-view .reveal-item:nth-child(3) {
-        transition-delay: 0.21s;
-      }
-      .in-view .reveal-item:nth-child(4) {
-        transition-delay: 0.29s;
-      }
-      .in-view .reveal-item:nth-child(5) {
-        transition-delay: 0.37s;
-      }
-      .in-view .reveal-item:nth-child(6) {
-        transition-delay: 0.45s;
-      }
-      .in-view .reveal-item:nth-child(7) {
-        transition-delay: 0.53s;
-      }
-      .in-view .reveal-item:nth-child(8) {
-        transition-delay: 0.61s;
-      }
-      .in-view .reveal-item:nth-child(9) {
-        transition-delay: 0.69s;
-      }
+      .in-view .reveal-item:nth-child(1) { transition-delay: 0.05s; }
+      .in-view .reveal-item:nth-child(2) { transition-delay: 0.13s; }
+      .in-view .reveal-item:nth-child(3) { transition-delay: 0.21s; }
+      .in-view .reveal-item:nth-child(4) { transition-delay: 0.29s; }
+      .in-view .reveal-item:nth-child(5) { transition-delay: 0.37s; }
+      .in-view .reveal-item:nth-child(6) { transition-delay: 0.45s; }
+      .in-view .reveal-item:nth-child(7) { transition-delay: 0.53s; }
+      .in-view .reveal-item:nth-child(8) { transition-delay: 0.61s; }
+      .in-view .reveal-item:nth-child(9) { transition-delay: 0.69s; }
 
       @media (prefers-reduced-motion: reduce) {
-        .reveal,
-        .reveal-left,
-        .reveal-right,
-        .reveal-scale,
-        .reveal-item {
+        .reveal, .reveal-left, .reveal-right, .reveal-scale, .reveal-item {
           transition: none !important;
           opacity: 1 !important;
           transform: none !important;
@@ -150,7 +107,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 4px 14px rgba(0,0,0,0.12);
         pointer-events: none;
         z-index: 5;
       }
@@ -183,10 +140,12 @@
         background: #f472b6;
       }
     </style>
-  </head>
-  <body class="bg-white">
-    <!-- NAVBAR -->
-    <header class="w-full border-b border-gray-100 relative z-50">
+</head>
+<body class="bg-white">
+
+    
+<!-- NAVBAR -->
+ <header class="w-full border-b border-gray-100 relative z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
           <!-- Logo -->
@@ -367,9 +326,7 @@
         <div
           class="px-4 py-4 space-y-1 uppercase text-sm font-medium text-gray-700 uppercase"
         >
-          <a href="index.html" class="block py-2 hover:text-pink-400"
-            >Homepage</a
-          >
+          <a href="index.html" class="block py-2 hover:text-pink-400">Homepage</a>
 
           <button
             class="w-full flex justify-between items-center py-2 mobile-dropdown-btn uppercase hover:text-pink-900"
@@ -392,17 +349,8 @@
           <div
             class="hidden pl-4 pb-2 space-y-1 normal-case text-gray-500 mobile-dropdown-panel"
           >
-            <a
-              href="product.html"
-              class="block py-1 uppercase hover:text-pink-500"
-            >
-              Products</a
-            >
-            <a
-              href="single_product.html"
-              class="block py-1 uppercase hover:text-pink-500"
-              >Single Products</a
-            >
+            <a href="product.html" class="block py-1 uppercase  hover:text-pink-500"> Products</a>
+            <a href="single_product.html" class="block py-1 uppercase  hover:text-pink-500">Single Products</a>
           </div>
 
           <button
@@ -426,17 +374,17 @@
           <div
             class="hidden pl-4 pb-2 space-y-1 normal-case text-gray-500 mobile-dropdown-panel"
           >
-            <a
-              href="about.html"
-              class="block py-1 uppercase hover:text-pink-500"
+            <a href="about.html" class="block py-1 uppercase hover:text-pink-500"
               >About</a
             >
-            <a href="faq.html" class="block py-1 uppercase hover:text-pink-500">Faq</a>
-
+            <a href="faq.html" class="block py-1 uppercase hover:text-pink-500"
+              >Faq</a
+            >
+       
             <a href="blog.html" class="block py-1 uppercase hover:text-pink-500"
               >Blog</a
             >
-            <a href="" class="block py-1 uppercase hover:text-pink-500"
+            <a href="#" class="block py-1 uppercase hover:text-pink-500"
               >Single Post</a
             >
           </div>
@@ -490,6 +438,7 @@
       </div>
     </header>
 
+
     <!-- HOME SECTION -->
     <section
       class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 bg-gray-200"
@@ -509,365 +458,203 @@
         <h1
           class="mb-5 text-gray-700 text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight tracking-wider"
         >
-          About Us
+          FAQ
         </h1>
         <p class="text-lg sm:text-xl text-gray-500 font-medium tracking-wider">
-          <a class="text-pink-300" href="#">HOME</a> / ABOUT
+          <a class="text-pink-300" href="#">HOME</a> / FAQ
         </p>
       </div>
     </section>
 
-    <!-- ABOUT TASYA -->
-    <section
-      class="relative overflow-hidden py-14 lg:py-16 px-6 lg:px-12 bg-white"
-    >
-      <div
-        class="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-16 items-center lg:items-stretch"
-      >
-        <div
-          class="reveal reveal-left reveal-delay-1 relative self-start h-[320px] sm:h-[420px] md:h-[480px] lg:h-[560px]"
-        >
-          <div
-            class="absolute inset-4 sm:inset-6 lg:inset-8 bg-pink-100 rounded-t-[6rem] sm:rounded-t-[8rem] lg:rounded-t-[10rem] scale-95 -z-10"
-          ></div>
-          <img
-            src="asset/beautiful-long-smooth-hair-woman-happy-clean-skin-2022-01-29-07-01-13-utc-2.png"
-            alt="Model with natural skincare glow"
-            class="relative z-10 w-full h-full object-cover rounded-[2rem] sm:rounded-[2.5rem] lg:rounded-[3rem]"
-          />
-          <img
-            src="asset/flower1.png"
-            alt=""
-            class="absolute bottom-0 right-2 sm:right-4 w-28 sm:w-40 lg:w-64 z-20 pointer-events-none select-none"
-          />
-        </div>
+<!--FAQ -->
+    <section class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 ">
+  <!-- <img
+    src="asset/flower2.png"
+    alt=""
+    class="absolute -top-6 -left-10 w-40 sm:w-56 opacity-90 pointer-events-none select-none z-0"
+  /> -->
+  <img
+    src="asset/Leaf4.png"
+    alt=""
+    class="absolute -bottom-10 -right-10 w-32 sm:w-48 opacity-90 pointer-events-none select-none z-0"
+  />
+  <div
+    class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center lg:place-items-stretch"
+  >
+    <div class="reveal reveal-left text-center lg:text-left">
+      <p class="text-pink-400 tracking-widest text-xl font-semibold uppercase mb-4">
+        FAQ
+      </p>
+      <h1 class="text-xl sm:text-4xl lg:text-6xl font-extrabold text-gray-800 leading-tight mb-6 font-mono">
+        The Most Question We Had<br class="hidden lg:block" />
+      </h1>
+      <p class="text-gray-500 mb-8 mx-auto lg:mx-0 font-medium">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+      </p>
 
-        <div
-          class="reveal reveal-right reveal-delay-1 order-1 lg:order-2 text-center lg:text-left lg:h-[560px] lg:flex lg:flex-col lg:justify-between"
-        >
-          <div>
-            <p
-              class="text-pink-400 text-sm tracking-widest uppercase font-semibold mb-4"
-            >
-              About Tasya
-            </p>
-
-            <h2
-              class="text-gray-700 font-mono text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 leading-tight"
-            >
-              We Use Pure &amp; Natural Ingredients
-            </h2>
-
-            <p
-              class="text-base sm:text-lg text-gray-600 mb-4 max-w-md mx-auto lg:mx-0 font-medium"
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              non maximus nisl. Vivamus imperdiet porttitor lorem.
-            </p>
-
-            <p
-              class="text-base sm:text-lg text-gray-600 max-w-md mx-auto lg:mx-0"
-            >
-              Duis vitae fermentum urna. Maecenas venenatis feugiat arcu et
-              sodales. Integer non ex vel ante vulputate porttitor praesent
-              aliquet elit sit amet enim cursus, pharetra ornare nisl lacinia.
-              Pellentesque sed magna posuere.
+      <!-- Accordion FAQ items -->
+      <div class="flex flex-col gap-3">
+        <div class="reveal-item faq-item rounded-2xl transition-colors duration-300 px-4 py-3">
+          <p class="faq-toggle flex items-center gap-3 cursor-pointer m-0 text-gray-700 font-medium transition-colors duration-300">
+            <span class="faq-icon-wrap flex items-center justify-center w-9 h-9 rounded-full border-2 border-pink-300 text-pink-400 flex-shrink-0 transition-all duration-300">
+              <i class="faq-icon bi bi-chevron-up text-base"></i>
+            </span>
+            <span class="faq-label transition-colors duration-300 text-xl font-bold text-gray-800">Nulla diam dui, placerat at mauris vel</span>
+          </p>
+          <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <p class="pt-3  text-[18px] text-gray-500 font-normal">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
           </div>
+        </div>
 
-          <div>
-            <div
-              class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-3 sm:gap-4 mt-6 lg:mt-2"
-            >
-              <p
-                class="border-l-2 border-pink-300 pl-4 text-gray-500 text-base text-center sm:text-left max-w-xs"
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <div class="reveal-item faq-item rounded-2xl transition-colors duration-300 px-4 py-3">
+          <p class="faq-toggle flex items-center gap-3 cursor-pointer m-0 text-gray-700 font-medium transition-colors duration-300">
+            <span class="faq-icon-wrap flex items-center justify-center w-9 h-9 rounded-full border-2 border-pink-300 text-pink-400 flex-shrink-0 transition-all duration-300">
+              <i class="faq-icon bi bi-chevron-up text-base"></i>
+            </span>
+            <span class="faq-label transition-colors duration-300 text-xl font-bold text-gray-800">Curabitur pharetra placerat dui</span>
+          </p>
+          <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <p class="pt-3  text-[18px] text-gray-500 font-normal">
+             Curabitur vitae risus fermentum, rhoncus neque ac, consectetur velit. Integer bibendum aliquam tellus et condimentum. Nunc pharetra gravida magna et pretium. Morbi condimentum ultrices velit, 
+             quis sollicitudin justo porttitor eleifend. In hac habitasse platea dictumst.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal-item faq-item rounded-2xl transition-colors duration-300 px-4 py-3">
+          <p class="faq-toggle flex items-center gap-3 cursor-pointer m-0 text-gray-700 font-medium transition-colors duration-300">
+            <span class="faq-icon-wrap flex items-center justify-center w-9 h-9 rounded-full border-2 border-pink-300 text-pink-400 flex-shrink-0 transition-all duration-300">
+              <i class="faq-icon bi bi-chevron-up text-base"></i>
+            </span>
+            <span class="faq-label transition-colors duration-300 text-xl font-bold text-gray-800">Donec ultrices tincidunt enim et varius</span>
+          </p>
+          <div class="faq-content overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <p class="pt-3 text-[18px] text-gray-500 font-normal">
+             Suspendisse at mi id tellus iaculis fermentum. Nulla dictum turpis sed eros ultrices, non accumsan odio tincidunt. 
+             Proin a sapien eu eros tempus facilisis vel lacinia est. Praesent ultrices felis id aliquet consequat. Morbi molestie sit amet arcu sed condimentum. Donec suscipit nisl sapien.
+
+
+            </p>
+             
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  <div class="reveal reveal-right reveal-delay-1 relative lg:order-none order-first lg:block self-start h-[320px] sm:h-[420px] lg:h-[560px]">
+  <div class="absolute inset-4 sm:inset-6 lg:inset-8 bg-pink-100 rounded-t-[10rem] scale-95 -z-10"></div>
+  <img
+    src="asset/young-beautiful-woman-with-a-bottle-of-perfume.png"
+    alt="Model with natural skincare glow"
+    class="relative z-10 w-full h-full object-cover rounded-[2rem] lg:rounded-[3rem]"
+  />
+  <img
+    src="asset/flower1.png"
+    alt=""
+    class="absolute bottom-0 right-2 sm:right-4 w-32 sm:w-48 lg:w-64 z-20 pointer-events-none select-none"
+  />
+</div>
+  </div>
+</section>
+
+<!-- LATEST NEWS - BLOG -->
+<section class="relative overflow-hidden py-16 lg:py-28 px-4 lg:px-8 bg-gray-200">
+  <div class="reveal relative z-10 text-center max-w-3xl mx-auto mb-14">
+    <h2 class="uppercase text-base text-pink-400 font-semibold mb-4 tracking-widest">latest news</h2>
+    <p class="text-5xl font-bold text-gray-800 mb-5 leading-tight">Amazing Blog Post & Article</p>
+    <p class="text-base text-gray-500 leading-relaxed">
+      Aenean porttitor, risus vitae semper ullamcorper, tellus felis sollicitudin mauris, eu mollis arcu sapien vel turpis.
+      Suspendisse maximus, quam et lacinia consequat, sapien turpis accumsan tellus.
+    </p>
+  </div>
+
+  <div class="max-w-[96rem] mx-auto m-4 lg:m-10">
+
+    <div class="reveal reveal-scale bg-white border-2 border-pink-300 rounded-[2.5rem] p-6 sm:p-8 lg:p-12">
+
+      <div class="flex flex-col lg:flex-row lg:items-stretch gap-8">
+
+        <!-- Big card, left -->
+        <div class="flex flex-col lg:w-2/5 bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg hover:shadow-pink-300 transition-shadow duration-300">
+          <img src="asset/beautiful-young-woman-with-a-pink-larkspur-flower-2022-08-14-01-29-05-utc.jpg" class="w-full h-64 sm:h-80 lg:h-[26rem] object-cover" alt="Card image">
+          <div class="flex flex-col flex-1 justify-between p-6 lg:p-7">
+            <div>
+              <h5 class="text-xl font-semibold text-gray-800 mb-4">Kiss Your Thin Lips Goodbye!</h5>
+              <p class="text-base text-gray-500 mb-4">
+                Nam vel viverra libero, eget lobortis est. Proin blandit enim augue, non lobortis purus ultricies in. Donec ut venenatis justo. Vestibulum tellus lectus, feugiat nec, pretium quis, sem. Nulla consequat massa quis enim.
               </p>
-              <img
-                class="w-[100px] sm:w-[120px]"
-                src="asset/Autograph.png"
-                alt=""
-              />
             </div>
+            <a href="#">
+              <span class="text-pink-500 font-semibold text-base">Read More +</span>
+            </a>
 
-            <div
-              class="grid grid-cols-3 gap-3 sm:gap-4 mt-6 max-w-md mx-auto lg:mx-0 rounded-2xl"
-            >
-              <div
-                class="bg-pink-300 text-white rounded-2xl shadow-md px-3 py-5 sm:py-6 text-center"
-              >
-                <h2
-                  class="text-2xl sm:text-3xl font-bold mb-1 count-up"
-                  data-target="4.8"
-                  data-decimals="1"
-                >
-                  0
-                </h2>
-                <p
-                  class="text-[11px] sm:text-xs font-medium tracking-wide uppercase leading-tight"
-                >
-                  12,000+ Ratings
-                </p>
-              </div>
-              <div
-                class="bg-pink-300 text-white rounded-2xl shadow-md px-3 py-5 sm:py-6 text-center"
-              >
-                <h2
-                  class="text-2xl sm:text-3xl font-bold mb-1 count-up"
-                  data-target="25"
-                  data-suffix="+"
-                >
-                  0
-                </h2>
-                <p
-                  class="text-[11px] sm:text-xs font-medium tracking-wide uppercase leading-tight"
-                >
-                  Product Health
-                </p>
-              </div>
-              <div
-                class="bg-pink-300 text-white rounded-2xl shadow-md px-3 py-5 sm:py-6 text-center"
-              >
-                <h2
-                  class="text-2xl sm:text-3xl font-bold mb-1 count-up"
-                  data-target="15"
-                  data-suffix="K"
-                >
-                  0
-                </h2>
-                <p
-                  class="text-[11px] sm:text-xs font-medium tracking-wide uppercase leading-tight"
-                >
-                  Sales Worldwide
-                </p>
-              </div>
+          </div>
+          <div class="border-t border-gray-100 px-6 py-4">
+            <small class="text-gray-400 text-sm">October 25, 2025 <span><i class="bi bi-dot"></i></span> No Comments</small>
+          </div>
+        </div>
+
+        <!-- Three small cards, right -->
+        <div class="lg:w-3/5 space-y-8">
+
+          <div class="flex flex-col sm:flex-row bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="w-full sm:w-1/3 shrink-0">
+              <img src="asset/young-beautiful-woman-with-a-bottle-of-perfume-2022-05-13-01-04-39-utc.jpg" class="w-full h-52 sm:h-full object-cover" alt="Body Soap">
+            </div>
+            <div class="w-full sm:w-2/3 p-6">
+              <h5 class="text-xl font-semibold text-gray-800 mb-3">Enjoy The Stay, Love The Shine</h5>
+              <small class="text-sm text-gray-500 mb-4 block">October 23, 2025 / No Comments</small>
+              <p class="text-base text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
+              <a href="#">
+                <p class="text-pink-500 font-semibold text-base">Read More +</p>
+              </a>
+
             </div>
           </div>
+
+          <div class="flex flex-col sm:flex-row bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="w-full sm:w-1/3 shrink-0">
+              <img src="asset/young-girl-with-care-beautiful-healthy-clean-skin-2022-01-28-12-31-23-utc.jpg" class="w-full h-52 sm:h-full object-cover" alt="Toner">
+            </div>
+            <div class="w-full sm:w-2/3 p-6">
+              <h5 class="text-xl font-semibold text-gray-800 mb-3">Sparkle On The Inside And Out</h5>
+              <small class="text-sm text-gray-500 mb-4 block">October 23, 2025 / No Comments</small>
+              <p class="text-base text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
+              <a href="#">
+                <p class="text-pink-500 font-semibold text-base">Read More +</p>
+              </a>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="w-full sm:w-1/3 shrink-0">
+              <img src="asset/beautiful-african-woman-black-t-shirt-portrait-afr-2022-01-29-07-01-03-utc.jpg" class="w-full h-52 sm:h-full object-cover" alt="Night Cream">
+            </div>
+            <div class="w-full sm:w-2/3 p-6">
+              <h5 class="text-xl font-semibold text-gray-800 mb-3">Inner Beauty Is The Best Beauty</h5>
+              <small class="text-sm text-gray-500 mb-4 block">October 23, 2025 / No Comments</small>
+              <p class="text-base text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
+              <a href="#">
+                <p class="text-pink-500 font-semibold text-base">Read More +</p>
+              </a>
+            </div>
+          </div>
+
         </div>
+
       </div>
-    </section>
 
-    <!-- Count-up animation script (only needs to be included once per page) -->
-    <script>
-      (function () {
-        const counters = document.querySelectorAll(".count-up");
-        if (counters.length === 0) return;
+    </div>
+  </div>
 
-        function animateCounter(el) {
-          const target = parseFloat(el.dataset.target);
-          const decimals = parseInt(el.dataset.decimals || "0", 10);
-          const suffix = el.dataset.suffix || "";
-          const duration = 1500;
-          const startTime = performance.now();
+</section>
 
-          function tick(now) {
-            const progress = Math.min((now - startTime) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const value = target * eased;
-            el.textContent = value.toFixed(decimals) + suffix;
 
-            if (progress < 1) {
-              requestAnimationFrame(tick);
-            } else {
-              el.textContent = target.toFixed(decimals) + suffix;
-            }
-          }
-          requestAnimationFrame(tick);
-        }
-
-        if (!("IntersectionObserver" in window)) {
-          counters.forEach(animateCounter);
-          return;
-        }
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.4 },
-        );
-
-        counters.forEach((el) => observer.observe(el));
-      })();
-    </script>
-
-    <section
-      class="relative overflow-hidden py-12 lg:py-20 px-6 lg:px-16 bg-gray-200"
-    >
-      <img
-        src="asset/flower2.png"
-        alt=""
-        class="absolute -top-6 -left-10 w-40 sm:w-56 opacity-90 pointer-events-none select-none z-0"
-      />
-      <img
-        src="asset/Leaf4.png"
-        alt=""
-        class="absolute -bottom-10 -right-10 w-32 sm:w-48 opacity-90 pointer-events-none select-none z-0"
-      />
-      <div
-        class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center lg:place-items-stretch"
-      >
-        <div class="reveal reveal-left text-center lg:text-left">
-          <p
-            class="text-pink-400 tracking-widest text-xl font-semibold uppercase mb-4"
-          >
-            WHY CHOOSE US
-          </p>
-          <h1
-            class="text-xl sm:text-4xl lg:text-5xl font-extrabold text-gray-800 leading-tight mb-6 font-mono"
-          >
-            Beauty is power, a smile is its sword<br class="hidden lg:block" />
-          </h1>
-          <p class="text-gray-500 mb-6 mx-auto lg:mx-0 font-medium">
-            Pellentesque vitae diam auctor justo mollis mattis. Pellentesque
-            habitant morbi tristique senectus et netus et malesuada fames ac
-            turpis egestas. Phasellus consectetur maximus nulla a ullamcorper.
-          </p>
-          <p class="text-gray-500 mb-8 mx-auto lg:mx-0">
-            Orci varius natoque penatibus et magnis dis parturient montes,
-            nascetur ridiculus mus. Mauris efficitur vulputate justo quis
-            auctor. Pellentesque vitae lectus dui. Vivamus ullamcorper nunc
-            tortor, vitae tempus quam fermentum at. Suspendisse faucibus maximus
-            metus, nec sagittis nisi gravida id.
-          </p>
-          <div
-            class="flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6"
-          >
-            <button
-              class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-4 rounded-full"
-            >
-              Explore More
-            </button>
-            <button
-              class="flex items-center gap-3 text-gray-700 font-medium uppercase text-sm tracking-wide hover:text-pink-400"
-            >
-              <span
-                class="w-9 h-9 rounded-full border border-gray-400 flex items-center justify-center"
-                >▶</span
-              >
-              Our Video
-            </button>
-          </div>
-        </div>
-
-        <div
-          class="reveal reveal-right grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6"
-        >
-          <div class="bg-white rounded-3xl shadow-lg p-5 sm:p-6 lg:p-8">
-            <i
-              class="bi bi-leaf-fill text-pink-400 text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4 block"
-            ></i>
-            <h2
-              class="text-base sm:text-lg lg:text-xl font-bold text-gray-800 mb-2"
-            >
-              100% Organic
-            </h2>
-            <p class="text-sm text-gray-500 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-3xl shadow-lg p-5 sm:p-6 lg:p-8">
-            <i
-              class="bi bi-heart-pulse-fill text-pink-400 text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4 block"
-            ></i>
-            <h2
-              class="text-base sm:text-lg lg:text-xl font-bold text-gray-800 mb-2"
-            >
-              Improve Health
-            </h2>
-            <p class="text-sm text-gray-500 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
-
-          <div
-            class="flex flex-col items-center justify-center text-center px-4 py-4 sm:py-0"
-          >
-            <h2
-              class="text-pink-400 text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-2 count-up"
-              data-target="10"
-              data-suffix="+"
-            >
-              0
-            </h2>
-            <p class="text-gray-800 font-bold text-base sm:text-lg">
-              Years Experience
-            </p>
-          </div>
-
-          <div class="bg-white rounded-3xl shadow-lg p-5 sm:p-6 lg:p-8">
-            <i
-              class="bi bi-shield-shaded text-pink-400 text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4 block"
-            ></i>
-            <h2
-              class="text-base sm:text-lg lg:text-xl font-bold text-gray-800 mb-2"
-            >
-              Biological Safe
-            </h2>
-            <p class="text-sm text-gray-500 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <script>
-      (function () {
-        const counters = document.querySelectorAll(".count-up");
-        if (counters.length === 0) return;
-
-        function animateCounter(el) {
-          const target = parseFloat(el.dataset.target);
-          const decimals = parseInt(el.dataset.decimals || "0", 10);
-          const suffix = el.dataset.suffix || "";
-          const duration = 1500;
-          const startTime = performance.now();
-
-          function tick(now) {
-            const progress = Math.min((now - startTime) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const value = target * eased;
-            el.textContent = value.toFixed(decimals) + suffix;
-
-            if (progress < 1) {
-              requestAnimationFrame(tick);
-            } else {
-              el.textContent = target.toFixed(decimals) + suffix;
-            }
-          }
-          requestAnimationFrame(tick);
-        }
-
-        if (!("IntersectionObserver" in window)) {
-          counters.forEach(animateCounter);
-          return;
-        }
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                animateCounter(entry.target);
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.4 },
-        );
-
-        counters.forEach((el) => observer.observe(el));
-      })();
-    </script>
-
-    <!-- FOOTER -->
+    
+<!-- FOOTER -->
     <footer class="bg-gray-900 text-white">
       <div
         class="max-w-7xl mx-auto px-6 lg:px-16 py-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10"
@@ -1107,5 +894,6 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-  </body>
+
+</body>
 </html>
