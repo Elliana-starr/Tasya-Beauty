@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasya Beauty-FAQ</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -13,7 +14,7 @@
       }
 
       /* ---- Scroll reveal animation system ---- */
-      .reveal {
+      /* .reveal {
         opacity: 0;
         transform: translateY(50px);
         transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
@@ -75,10 +76,10 @@
           opacity: 1 !important;
           transform: none !important;
         }
-      }
+      } */
 
       /* ---- Product image hover zoom ---- */
-      .zoom-frame {
+      /* .zoom-frame {
         position: relative;
         overflow: hidden;
         cursor: zoom-in;
@@ -110,20 +111,20 @@
         box-shadow: 0 4px 14px rgba(0,0,0,0.12);
         pointer-events: none;
         z-index: 5;
-      }
+      } */
 
       /* Quantity stepper */
-      .qty-input::-webkit-outer-spin-button,
+      /* .qty-input::-webkit-outer-spin-button,
       .qty-input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
       }
       .qty-input {
         -moz-appearance: textfield;
-      }
+      } */
 
       /* Tabs underline */
-      .tab-btn {
+      /* .tab-btn {
         position: relative;
         padding-bottom: 0.9rem;
       }
@@ -138,8 +139,8 @@
         bottom: -1px;
         height: 2px;
         background: #f472b6;
-      }
-    </style>
+      } */
+          </style>
 </head>
 <body class="bg-white">
 
@@ -481,7 +482,7 @@
   <div
     class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center lg:place-items-stretch"
   >
-    <div class="reveal reveal-left text-center lg:text-left">
+    <div  data-aos="fade-right" class="reveal reveal-left text-center lg:text-left">
       <p class="text-pink-400 tracking-widest text-xl font-semibold uppercase mb-4">
         FAQ
       </p>
@@ -544,7 +545,7 @@
 
 
     </div>
-  <div class="reveal reveal-right reveal-delay-1 relative lg:order-none order-first lg:block self-start h-[320px] sm:h-[420px] lg:h-[560px]">
+  <div  data-aos="fade-left" class="reveal reveal-right reveal-delay-1 relative lg:order-none order-first lg:block self-start h-[320px] sm:h-[420px] lg:h-[560px]">
   <div class="absolute inset-4 sm:inset-6 lg:inset-8 bg-pink-100 rounded-t-[10rem] scale-95 -z-10"></div>
   <img
     src="asset/young-beautiful-woman-with-a-bottle-of-perfume.png"
@@ -562,7 +563,7 @@
 
 <!-- LATEST NEWS - BLOG -->
 <section class="relative overflow-hidden py-16 lg:py-28 px-4 lg:px-8 bg-gray-200">
-  <div class="reveal relative z-10 text-center max-w-3xl mx-auto mb-14">
+  <div  data-aos="fade-up" class="reveal relative z-10 text-center max-w-3xl mx-auto mb-14">
     <h2 class="uppercase text-base text-pink-400 font-semibold mb-4 tracking-widest">latest news</h2>
     <p class="text-5xl font-bold text-gray-800 mb-5 leading-tight">Amazing Blog Post & Article</p>
     <p class="text-base text-gray-500 leading-relaxed">
@@ -571,7 +572,8 @@
     </p>
   </div>
 
-  <div class="max-w-[96rem] mx-auto m-4 lg:m-10">
+  <div  data-aos="fade-up"
+     data-aos-duration="3000" class="max-w-[96rem] mx-auto m-4 lg:m-10">
 
     <div class="reveal reveal-scale bg-white border-2 border-pink-300 rounded-[2.5rem] p-6 sm:p-8 lg:p-12">
 
@@ -587,7 +589,7 @@
                 Nam vel viverra libero, eget lobortis est. Proin blandit enim augue, non lobortis purus ultricies in. Donec ut venenatis justo. Vestibulum tellus lectus, feugiat nec, pretium quis, sem. Nulla consequat massa quis enim.
               </p>
             </div>
-            <a href="#">
+            <a href="single_post.html">
               <span class="text-pink-500 font-semibold text-base">Read More +</span>
             </a>
 
@@ -608,7 +610,7 @@
               <h5 class="text-xl font-semibold text-gray-800 mb-3">Enjoy The Stay, Love The Shine</h5>
               <small class="text-sm text-gray-500 mb-4 block">October 23, 2025 / No Comments</small>
               <p class="text-base text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
-              <a href="#">
+              <a href="single_post.html">
                 <p class="text-pink-500 font-semibold text-base">Read More +</p>
               </a>
 
@@ -623,7 +625,7 @@
               <h5 class="text-xl font-semibold text-gray-800 mb-3">Sparkle On The Inside And Out</h5>
               <small class="text-sm text-gray-500 mb-4 block">October 23, 2025 / No Comments</small>
               <p class="text-base text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
-              <a href="#">
+              <a href="single_post.html">
                 <p class="text-pink-500 font-semibold text-base">Read More +</p>
               </a>
             </div>
@@ -637,7 +639,7 @@
               <h5 class="text-xl font-semibold text-gray-800 mb-3">Inner Beauty Is The Best Beauty</h5>
               <small class="text-sm text-gray-500 mb-4 block">October 23, 2025 / No Comments</small>
               <p class="text-base text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
-              <a href="#">
+              <a href="single_post.html">
                 <p class="text-pink-500 font-semibold text-base">Read More +</p>
               </a>
             </div>
@@ -857,7 +859,7 @@
     </script>
 
     <!-- Scroll reveal animation script  -->
-    <script>
+    <!-- <script>
       (function () {
         const revealEls = document.querySelectorAll(".reveal");
 
@@ -887,13 +889,16 @@
           observer.observe(el);
         });
       })();
-    </script>
+    </script> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>

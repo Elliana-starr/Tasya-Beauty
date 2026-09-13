@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tasya Beauty-About</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
@@ -25,7 +26,7 @@
       }
 
       /* ---- Scroll reveal animation system ---- */
-      .reveal {
+      /* .reveal {
         opacity: 0;
         transform: translateY(50px);
         transition:
@@ -118,10 +119,10 @@
           opacity: 1 !important;
           transform: none !important;
         }
-      }
+      } */
 
       /* ---- Product image hover zoom ---- */
-      .zoom-frame {
+      /* .zoom-frame {
         position: relative;
         overflow: hidden;
         cursor: zoom-in;
@@ -153,20 +154,20 @@
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
         pointer-events: none;
         z-index: 5;
-      }
+      } */
 
       /* Quantity stepper */
-      .qty-input::-webkit-outer-spin-button,
+      /* .qty-input::-webkit-outer-spin-button,
       .qty-input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
       }
       .qty-input {
         -moz-appearance: textfield;
-      }
+      } */
 
       /* Tabs underline */
-      .tab-btn {
+      /* .tab-btn {
         position: relative;
         padding-bottom: 0.9rem;
       }
@@ -181,7 +182,7 @@
         bottom: -1px;
         height: 2px;
         background: #f472b6;
-      }
+      } */
     </style>
   </head>
   <body class="bg-white">
@@ -1166,5 +1167,9 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
   </body>
 </html>

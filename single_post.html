@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tasya Beauty - Beauty</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
@@ -25,7 +26,7 @@
       }
 
       /* ---- Scroll reveal animation system ---- */
-      .reveal {
+      /* .reveal {
         opacity: 0;
         transform: translateY(50px);
         transition:
@@ -118,10 +119,10 @@
           opacity: 1 !important;
           transform: none !important;
         }
-      }
+      } */
 
       /* ---- Product image hover zoom ---- */
-      .zoom-frame {
+      /* .zoom-frame {
         position: relative;
         overflow: hidden;
         cursor: zoom-in;
@@ -153,17 +154,17 @@
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
         pointer-events: none;
         z-index: 5;
-      }
+      } */
 
       /* Quantity stepper */
-      .qty-input::-webkit-outer-spin-button,
+      /* .qty-input::-webkit-outer-spin-button,
       .qty-input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
       }
       .qty-input {
         -moz-appearance: textfield;
-      }
+      } */
 
       /* Tabs underline */
       .tab-btn {
@@ -531,6 +532,7 @@
 
         <!-- LEFT ITEMS: article, spans 2 of 3 columns -->
         <div class="lg:col-span-2 reveal reveal-left">
+          <div  data-aos="zoom-in-right">
           <h1 class="text-3xl lg:text-4xl font-extrabold text-gray-800 leading-tight mb-4">
             Kiss Your Thin Lips Goodbye!
           </h1>
@@ -549,8 +551,9 @@
               <span>No Comments!</span>
             </a>
           </div>
+          </div>
 
-          <div class="mb-10">
+          <div  data-aos="fade-up-right" class="mb-10">
             <img
               src="asset/beautiful-young-woman-with-a-pink-larkspur-flower-2022-08-14-01-29-05-utc.jpg"
               alt=""
@@ -567,7 +570,7 @@
             </p>
           </div>
 
-          <div class="mb-6">
+          <div  data-aos="fade-up-right" class="mb-6">
             <img
               src="asset/beauty-woman-applying-black-mascara-on-eyelashes-2021-09-02-12-27-25-utc.jpg"
               alt=""
@@ -591,7 +594,7 @@
         <aside class="flex flex-col gap-6">
 
           <!-- Promo card 1: 30% off -->
-          <div class="reveal reveal-right reveal-delay-1 relative rounded-[2rem] overflow-hidden text-left min-h-[520px]">
+          <div data-aos="fade-left" class="reveal reveal-right reveal-delay-1 relative rounded-[2rem] overflow-hidden text-left min-h-[520px]">
             <!-- Silver drape background, fills the whole card -->
             <img
               src="asset/creases-of-white-satin-silk-and-cotton-abstract-2021-12-09-21-20-40-utc-1.jpg"
@@ -608,7 +611,7 @@
                 <span class="text-pink-400 font-semibold">Condition Apply</span>
               </p>
 
-              <div class="relative mt-auto -mx-6 sm:-mx-7 -mb-6 sm:-mb-7">
+              <div  class="relative mt-auto -mx-6 sm:-mx-7 -mb-6 sm:-mb-7">
                 <!-- Pink flower, sits behind the girl -->
                 <img
                   src="asset/flower1.png"
@@ -626,7 +629,7 @@
           </div>
 
           <!-- Promo card 2 —  -->
-          <div class="reveal reveal-right reveal-delay-2 rounded-[2rem] bg-pink-400 min-h-[340px] p-6 sm:p-7 flex flex-col justify-center">
+          <div data-aos="fade-left" class="reveal reveal-right reveal-delay-2 rounded-[2rem] bg-pink-400 min-h-[340px] p-6 sm:p-7 flex flex-col justify-center">
   <h3 class="text-xl sm:text-2xl font-bold text-white leading-snug mb-2 ">
     Subscribe
   </h3>
@@ -653,7 +656,7 @@
 
           <!-- Promo card 3 —  -->
   
-<div class="reveal reveal-right reveal-delay-3 rounded-[2rem] p-6 sm:p-7 border-2 border-pink-200">
+<div data-aos="fade-up-left" class="reveal reveal-right reveal-delay-3 rounded-[2rem] p-6 sm:p-7 border-2 border-pink-200">
   <p class="uppercase text-gray-700 text-xl font-semibold tracking-wide mb-5">Inspired Post</p>
 
   <div class="divide-y divide-gray-100">
@@ -818,57 +821,8 @@
         </div>
       </div>
     </footer>
-    <!-- FAQ script -->
-    <script>
-      document.querySelectorAll(".faq-toggle").forEach((toggle) => {
-        toggle.addEventListener("click", () => {
-          const item = toggle.closest(".faq-item");
-          const content = item.querySelector(".faq-content");
-          const iconWrap = item.querySelector(".faq-icon-wrap");
-          const icon = item.querySelector(".faq-icon");
-          const label = item.querySelector(".faq-label");
-          const isOpen = item.classList.contains("faq-open");
-
-          // Reset every item first
-          document.querySelectorAll(".faq-item").forEach((el) => {
-            el.classList.remove("faq-open");
-            el.querySelector(".faq-content").style.maxHeight = null;
-
-            const w = el.querySelector(".faq-icon-wrap");
-            w.classList.remove("bg-pink-400", "border-pink-400", "text-white");
-            w.classList.add("border-pink-300", "text-pink-400");
-
-            // reset icon back to chevron-up
-            const ic = el.querySelector(".faq-icon");
-            ic.classList.remove("bi-chevron-down");
-            ic.classList.add("bi-chevron-up");
-
-            const l = el.querySelector(".faq-label");
-            l.classList.remove("text-pink-400");
-            l.classList.add("text-gray-700");
-          });
-
-          // Open the clicked one if it wasn't already open
-          if (!isOpen) {
-            item.classList.add("faq-open");
-            content.style.maxHeight = content.scrollHeight + "px";
-
-            iconWrap.classList.remove("border-pink-300", "text-pink-400");
-            iconWrap.classList.add(
-              "bg-pink-400",
-              "border-pink-400",
-              "text-white",
-            );
-
-            // swap to chevron-down when open
-            icon.classList.remove("bi-chevron-up");
-            icon.classList.add("bi-chevron-down");
-
-            label.classList.remove("text-gray-700");
-            label.classList.add("text-pink-400");
-          }
-        });
-      });
+    
+    
     </script>
 
     <!-- navbar mobile script -->
@@ -896,7 +850,7 @@
     </script>
 
     <!-- Scroll reveal animation script  -->
-    <script>
+    <!-- <script>
       (function () {
         const revealEls = document.querySelectorAll(".reveal");
 
@@ -926,12 +880,16 @@
           observer.observe(el);
         });
       })();
-    </script>
+    </script> -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+  AOS.init();
+</script>
   </body>
 </html>
