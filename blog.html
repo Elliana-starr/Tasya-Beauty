@@ -506,7 +506,7 @@
               Nam vel viverra libero, eget lobortis est. Proin blandit enim augue, non lobortis purus ultricies in. Donec ut venenatis justo. Vestibulum tellus lectus, feugiat nec, pretium quis, sem.
             </p>
           </div>
-          <a href="#">
+          <a href="single_post.html">
             <span class="text-pink-500 font-semibold text-base">Read More +</span>
           </a>
         </div>
@@ -523,7 +523,7 @@
             <h5 class="text-xl font-semibold text-gray-800 mb-3">Enjoy The Stay, Love The Shine</h5>
             <p class="text-base text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
           </div>
-          <a href="#">
+          <a href="single_post.html">
             <span class="text-pink-500 font-semibold text-base">Read More +</span>
           </a>
         </div>
@@ -540,7 +540,7 @@
             <h5 class="text-xl font-semibold text-gray-800 mb-3">Sparkle On The Inside And Out</h5>
             <p class="text-base text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
           </div>
-          <a href="#">
+          <a href="single_post.html">
             <span class="text-pink-500 font-semibold text-base">Read More +</span>
           </a>
         </div>
@@ -557,7 +557,7 @@
             <h5 class="text-xl font-semibold text-gray-800 mb-3">Inner Beauty Is The Best Beauty</h5>
             <p class="text-base text-gray-500 mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
           </div>
-          <a href="#">
+          <a href="single_post.html">
             <span class="text-pink-500 font-semibold text-base">Read More +</span>
           </a>
         </div>
@@ -696,58 +696,8 @@
         </div>
       </div>
     </footer>
-    <!-- FAQ script -->
-    <script>
-      document.querySelectorAll(".faq-toggle").forEach((toggle) => {
-        toggle.addEventListener("click", () => {
-          const item = toggle.closest(".faq-item");
-          const content = item.querySelector(".faq-content");
-          const iconWrap = item.querySelector(".faq-icon-wrap");
-          const icon = item.querySelector(".faq-icon");
-          const label = item.querySelector(".faq-label");
-          const isOpen = item.classList.contains("faq-open");
-
-          // Reset every item first
-          document.querySelectorAll(".faq-item").forEach((el) => {
-            el.classList.remove("faq-open");
-            el.querySelector(".faq-content").style.maxHeight = null;
-
-            const w = el.querySelector(".faq-icon-wrap");
-            w.classList.remove("bg-pink-400", "border-pink-400", "text-white");
-            w.classList.add("border-pink-300", "text-pink-400");
-
-            // reset icon back to chevron-up
-            const ic = el.querySelector(".faq-icon");
-            ic.classList.remove("bi-chevron-down");
-            ic.classList.add("bi-chevron-up");
-
-            const l = el.querySelector(".faq-label");
-            l.classList.remove("text-pink-400");
-            l.classList.add("text-gray-700");
-          });
-
-          // Open the clicked one if it wasn't already open
-          if (!isOpen) {
-            item.classList.add("faq-open");
-            content.style.maxHeight = content.scrollHeight + "px";
-
-            iconWrap.classList.remove("border-pink-300", "text-pink-400");
-            iconWrap.classList.add(
-              "bg-pink-400",
-              "border-pink-400",
-              "text-white",
-            );
-
-            // swap to chevron-down when open
-            icon.classList.remove("bi-chevron-up");
-            icon.classList.add("bi-chevron-down");
-
-            label.classList.remove("text-gray-700");
-            label.classList.add("text-pink-400");
-          }
-        });
-      });
-    </script>
+   
+    
 
     <!-- navbar mobile script -->
     <script>
@@ -773,38 +723,7 @@
         .forEach(() => {});
     </script>
 
-    <!-- Scroll reveal animation script  -->
-    <!-- <script>
-      (function () {
-        const revealEls = document.querySelectorAll(".reveal");
-
-        if (!("IntersectionObserver" in window) || revealEls.length === 0) {
-          revealEls.forEach((el) => el.classList.add("in-view"));
-          return;
-        }
-
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("in-view");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          {
-            root: null,
-            rootMargin: "0px 0px -10% 0px",
-            threshold: 0.15,
-          },
-        );
-
-        revealEls.forEach((el) => {
-          if (el.closest("footer")) return; // never animate footer content
-          observer.observe(el);
-        });
-      })();
-    </script> -->
+   
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

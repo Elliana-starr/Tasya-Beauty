@@ -351,7 +351,7 @@
           <div
         class="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-start lg:place-items-stretch"
       >
-        <!-- LEFT: intro + contact info -->
+        <!-- contact info -->
         <div data-aos="fade-up-right" class="reveal reveal-left text-center lg:text-left">
           <p
             class="text-pink-400 tracking-widest text-xl font-semibold uppercase mb-4"
@@ -637,58 +637,7 @@
         </div>
       </div>
     </footer>
-    <!-- FAQ script -->
-    <script>
-      document.querySelectorAll(".faq-toggle").forEach((toggle) => {
-        toggle.addEventListener("click", () => {
-          const item = toggle.closest(".faq-item");
-          const content = item.querySelector(".faq-content");
-          const iconWrap = item.querySelector(".faq-icon-wrap");
-          const icon = item.querySelector(".faq-icon");
-          const label = item.querySelector(".faq-label");
-          const isOpen = item.classList.contains("faq-open");
-
-          // Reset every item first
-          document.querySelectorAll(".faq-item").forEach((el) => {
-            el.classList.remove("faq-open");
-            el.querySelector(".faq-content").style.maxHeight = null;
-
-            const w = el.querySelector(".faq-icon-wrap");
-            w.classList.remove("bg-pink-400", "border-pink-400", "text-white");
-            w.classList.add("border-pink-300", "text-pink-400");
-
-            // reset icon back to chevron-up
-            const ic = el.querySelector(".faq-icon");
-            ic.classList.remove("bi-chevron-down");
-            ic.classList.add("bi-chevron-up");
-
-            const l = el.querySelector(".faq-label");
-            l.classList.remove("text-pink-400");
-            l.classList.add("text-gray-700");
-          });
-
-          // Open the clicked one if it wasn't already open
-          if (!isOpen) {
-            item.classList.add("faq-open");
-            content.style.maxHeight = content.scrollHeight + "px";
-
-            iconWrap.classList.remove("border-pink-300", "text-pink-400");
-            iconWrap.classList.add(
-              "bg-pink-400",
-              "border-pink-400",
-              "text-white",
-            );
-
-            // swap to chevron-down when open
-            icon.classList.remove("bi-chevron-up");
-            icon.classList.add("bi-chevron-down");
-
-            label.classList.remove("text-gray-700");
-            label.classList.add("text-pink-400");
-          }
-        });
-      });
-    </script>
+    
 
     <!-- navbar mobile script -->
     <script>
