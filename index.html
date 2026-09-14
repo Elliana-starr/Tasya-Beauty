@@ -532,53 +532,8 @@
 
   <!-- CARDS -->
   <div class="relative z-10 mt-12">
-    <div class="reveal card-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-
-      <div  data-aos="fade-up" class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
-        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
-        <img src="asset/PrdBody-Soap-600x600.png" class="card-img-top mx-auto mb-4" alt="Body Soap">
-        <div class="card-body">
-          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Body Soap</h5>
-          <p class="card-text text-sm mb-4">
-            <del class="text-gray-400 font-medium">$25.00</del>
-            <span class="text-gray-800 font-semibold underline">$20.00</span>
-          </p>
-        </div>
-        <div class="card-footer">
-          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
-        </div>
-      </div>
-
-      <div  data-aos="fade-up"  class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
-        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
-        <img src="asset/PrdToner-600x600.png" class="card-img-top mx-auto mb-4" alt="Toner">
-        <div class="card-body">
-          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Toner</h5>
-          <p class="card-text text-sm mb-4">
-            <del class="text-gray-400 font-medium">$20.00</del>
-            <span class="text-gray-800 font-semibold underline">$12.00</span>
-          </p>
-        </div>
-        <div class="card-footer">
-          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
-        </div>
-      </div>
-
-      <div  data-aos="fade-up" class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
-        <span class="absolute top-4 right-4 bg-pink-400 text-white text-xs font-semibold uppercase rounded-full w-12 h-12 flex items-center justify-center">Sale!</span>
-        <img src="asset/PrdNight-Cream-600x600.png" class="card-img-top mx-auto mb-4" alt="Night Cream">
-        <div class="card-body">
-          <h5 class="card-title text-lg font-semibold text-gray-800 mb-2">Night Cream</h5>
-          <p class="card-text text-sm mb-4">
-            <del class="text-gray-400 font-medium">$15.00</del>
-            <span class="text-gray-800 font-semibold underline">$10.00</span>
-          </p>
-        </div>
-        <div class="card-footer">
-          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
-        </div>
-      </div>
-
+    <div id="product_card" class=" reveal card-group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <!-- Coming from the script index.js -->
     </div>
   </div>
 </section>
@@ -1082,78 +1037,15 @@
     </div>
   </div>
 </footer>
-<!-- FAQ script -->
+<!-- FAQ script
 <script>
-  document.querySelectorAll('.faq-toggle').forEach((toggle) => {
-    toggle.addEventListener('click', () => {
-      const item = toggle.closest('.faq-item');
-      const content = item.querySelector('.faq-content');
-      const iconWrap = item.querySelector('.faq-icon-wrap');
-      const icon = item.querySelector('.faq-icon');
-      const label = item.querySelector('.faq-label');
-      const isOpen = item.classList.contains('faq-open');
-
-      // Reset every item first
-      document.querySelectorAll('.faq-item').forEach((el) => {
-        el.classList.remove('faq-open');
-        el.querySelector('.faq-content').style.maxHeight = null;
-
-        const w = el.querySelector('.faq-icon-wrap');
-        w.classList.remove('bg-pink-400', 'border-pink-400', 'text-white');
-        w.classList.add('border-pink-300', 'text-pink-400');
-
-        // reset icon back to chevron-up
-        const ic = el.querySelector('.faq-icon');
-        ic.classList.remove('bi-chevron-down');
-        ic.classList.add('bi-chevron-up');
-
-        const l = el.querySelector('.faq-label');
-        l.classList.remove('text-pink-400');
-        l.classList.add('text-gray-700');
-      });
-
-      // Open the clicked one if it wasn't already open
-      if (!isOpen) {
-        item.classList.add('faq-open');
-        content.style.maxHeight = content.scrollHeight + 'px';
-
-        iconWrap.classList.remove('border-pink-300', 'text-pink-400');
-        iconWrap.classList.add('bg-pink-400', 'border-pink-400', 'text-white');
-
-        // swap to chevron-down when open
-        icon.classList.remove('bi-chevron-up');
-        icon.classList.add('bi-chevron-down');
-
-        label.classList.remove('text-gray-700');
-        label.classList.add('text-pink-400');
-      }
-    });
-  });
-</script>
+ 
+</script> -->
 
 <!-- navbar mobile script -->
-    <script>
-      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
-      mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      document.querySelectorAll(".mobile-dropdown-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const panel = btn.nextElementSibling;
-          panel.classList.toggle("hidden");
-          const icon = btn.querySelector("svg");
-          icon.classList.toggle("rotate-180");
-        });
-      });
-
-      // Example: cart count hook (increment on cart button click, for demo purposes)
-      let count = 0;
-      document
-        .querySelectorAll("#cartCount, .lg\\:hidden .absolute")
-        .forEach(() => {});
-    </script>
+    <!-- <script>
+     
+    </script> -->
 
     <!-- Scroll reveal animation script  -->
     <!-- <script>
@@ -1187,7 +1079,7 @@
         });
       })();
     </script> -->
-
+    <script src="./asset/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
