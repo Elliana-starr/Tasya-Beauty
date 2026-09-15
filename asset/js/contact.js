@@ -1,6 +1,5 @@
 
     // navbar mobile script 
-  >
       const mobileMenuBtn = document.getElementById("mobileMenuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
       mobileMenuBtn.addEventListener("click", () => {
