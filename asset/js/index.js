@@ -2,7 +2,7 @@ let productContents = [
     {
         id: 1,
         name: "Body Soap",
-        image: "asset/PrdBody-Soap-600x600.png",
+        image: "asset/images/PrdBody-Soap-600x600.png",
         originalPrice: "$25.00",
         salePrice: "$20.00",
         isOnSale: true
@@ -10,7 +10,7 @@ let productContents = [
     {
         id: 2,
         name: "Toner",
-        image: "asset/PrdToner-600x600.png",
+        image: "asset/images/PrdToner-600x600.png",
         originalPrice: "$20.00",
         salePrice: "$12.00",
         isOnSale: true
@@ -18,17 +18,70 @@ let productContents = [
     {
         id: 3,
         name: "Night Cream",
-        image: "asset/PrdNight-Cream-600x600.png",
+        image: "asset/images/PrdNight-Cream-600x600.png",
         originalPrice: "$15.00",
         salePrice: "$10.00",
         isOnSale: true
     }
 ]
 
+let newReleaseContents = [
+  {
+    id: 1,
+    name: "Sunscreen",
+    image: "asset/images/PrdSunscreen-600x600.png",
+    price: "$15.00"
+  },
+
+  {
+    id: 2,
+    name: "Toner",
+    image: "asset/images/PrdToner-600x600.png",
+    price: "$20.00"
+  },
+  {
+    id: 3,
+    name: "Face Oil",
+    image: "asset/images/PrdFace-Oil-600x600.png",
+    price: "$10.00"
+  }
+]
+
+let latestNewsContents = [
+  {
+    id: 1,
+    title: "Enjoy The Stay, Love The Shine",
+    date: "October 23, 2025",
+    comments: "No Comments",
+    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam.",
+    image: "asset/images/young-beautiful-woman-with-a-bottle-of-perfume-2022-05-13-01-04-39-utc.jpg"
+  },
+  {
+    id: 2,
+    title: "Sparkle On The Inside And Out",
+    date: "November 5, 2025",
+    comments: "No Comments",
+    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam.",
+    image: "asset/images/young-girl-with-care-beautiful-healthy-clean-skin-2022-01-28-12-31-23-utc.jpg"
+  },
+  {
+    id: 3,
+    title: "Inner Beauty Is The Best Beauty",
+    date: "December 12, 2025",
+    comments: "No Comments",
+    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam.",
+    image: "asset/images/beautiful-african-woman-black-t-shirt-portrait-afr-2022-01-29-07-01-03-utc.jpg"
+  }
+
+]
+
+
 
 const mobileMenuBtn = document.getElementById("mobileMenuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const productCard = document.getElementById("product_card");
+const newReleaseCard = document.getElementById("newRelease_card")
+const latestNewsCard = document.getElementById("latestNews_card")  
 
 document.querySelectorAll(".faq-toggle").forEach((toggle) => {
   toggle.addEventListener("click", () => {
@@ -116,4 +169,43 @@ productContents.forEach((product) => {
         </div>
       </div>
     `
+})
+
+newReleaseContents.forEach((product) => {
+    newReleaseCard.innerHTML += `
+     <div data-aos="fade-up"
+     data-aos-duration="3000" class="reveal-item card relative text-center bg-white rounded-3xl shadow-lg p-6 pb-8">
+       
+        <img src="${product.image}" class="card-img-top mx-auto mb-4" alt="${product.name}">
+        <div class="card-body">
+          <h5 class="card-title text-lg font-semibold text-gray-700 mb-2">${product.name}</h5>
+          <p class="card-text text-sm mb-4 text-gray-600">${product.price}
+        
+          </p>
+        </div>
+        <div class="card-footer">
+          <button class="bg-pink-300 hover:bg-pink-400 transition text-white font-semibold uppercase text-sm tracking-wide px-8 py-3 rounded-full">add to cart</button>
+        </div>
+      </div>
+    `
+})
+
+latestNewsContents.forEach((product) => {
+  latestNewsCard.innerHTML += `
+  <div class="flex flex-col sm:flex-row bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="w-full sm:w-1/3 shrink-0">
+              <img src="${product.image}" class="w-full h-40 sm:h-full object-cover" alt="">
+            </div>
+            <div class="w-full sm:w-2/3 p-5">
+              <h5 class="text-lg font-semibold text-gray-800 mb-2">${product.title}</h5>
+              <small class="text-xs text-gray-500 mb-3 block">${product.date} / ${product.comments}</small>
+              <p class="text-sm text-gray-500 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec erat turpis. Suspendisse at maximus sapien. Sed aliquet nisi quam,</p>
+              <a href="single_post.html">
+                <p class="text-pink-500 font-semibold text-sm">Read More +</p>
+              </a>
+              
+            </div>
+          </div>  
+
+  `
 })
