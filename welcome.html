@@ -96,10 +96,15 @@
             for a clearer, brighter you.
           </p>
 
-          <button class="animate-rise-d2 mt-7 w-full lg:w-fit lg:px-10 rounded-full py-3.5 font-medium flex items-center justify-center gap-2 bg-rose-500 text-white transition-transform duration-150 hover:bg-rose-600 hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-3 focus-visible:outline-rose-600/45 focus-visible:outline-offset-2">
+          <button id="continueBtn" class="animate-rise-d2 mt-7 w-full lg:w-fit lg:px-10 rounded-full py-3.5 font-medium flex items-center justify-center gap-2 bg-rose-500 text-white transition-transform duration-150 hover:bg-rose-600 hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-3 focus-visible:outline-rose-600/45 focus-visible:outline-offset-2">
             Get started
             <i class="bi bi-arrow-right"></i>
           </button>
+             <script>
+  document.getElementById('continueBtn').addEventListener('click', () => {
+    window.location.href = 'signIn.html';
+  });
+</script>
 
         </div>
 

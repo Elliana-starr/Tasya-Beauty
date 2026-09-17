@@ -179,6 +179,9 @@
                 >0</span
               >
             </button>
+
+            <button class="continueBtn relative flex items-center gap-2 border border-black text-black hover:bg-pink-400 hover:text-white transition duration-300 ease-in-out font-semibold px-5 py-3 rounded-md">Get Started</button>
+ 
           </div>
 
           <!-- Mobile menu button -->
@@ -336,10 +339,23 @@
                 >0</span
               >
             </button>
+
+            <button class="continueBtn  relative flex items-center gap-2 border border-black text-black hover:bg-pink-400 hover:text-white transition duration-300 ease-in-out font-semibold px-5 py-3 rounded-md">Get Started</button>
+            
           </div>
         </div>
       </div>
     </header>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.continueBtn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        window.location.href = 'welcome.html';
+      });
+    });
+  });
+</script>
 
     <!-- HOME SECTION -->
     <section
