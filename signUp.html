@@ -80,15 +80,17 @@
               Create Your
               <span class="text-rose-500 italic">Account</span>
             </h1>
-
+ <p class="animate-rise-d1 mt-4 text-ink-soft text-center mb-3 text-sm lg:text-lg lg:max-w-sm font-display">
+             Join us and take the first step to healthier, glowing skin
+            </p>
           
 
           </div>
 
           <div class="relative flex flex-col justify-end lg:justify-center px-6 py-8 lg:px-12 lg:py-10 bg-paper">
 
-            <p class="animate-rise-d1 mt-4 text-ink-soft text-center mb-3 text-sm lg:text-lg lg:max-w-sm font-display">
-             Join us and take the first step to healthier, glowing skin
+            <p class="animate-rise-d1 mt-4 text-ink-soft text-center mb-3 text-xl lg:text-2xl lg:max-w-sm font-display">
+      Sign Up
             </p>
 
            <form class="space-y-5" novalidate>
@@ -146,29 +148,46 @@
   </div>
 
   <div class="relative">
-    <label for="password" class="sr-only">Password</label>
-    <span class="absolute inset-y-0 left-5 flex items-center text-gray-400">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-      </svg>
-    </span>
-    <input
-      id="password"
-      type="password"
-      name="password"
-      placeholder="Password"
-      autocomplete="current-password"
-      required
-      class="w-full rounded-full border border-gray-300 pl-14 pr-6 py-4 text-gray-600 placeholder-gray-400 focus:outline-none focus:border-pink-400 transition"
-    />
-  </div>
+  <label for="password" class="sr-only">Password</label>
+  <span class="absolute inset-y-0 left-5 flex items-center text-gray-400">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+    </svg>
+  </span>
+  <input
+    id="password"
+    type="password"
+    name="password"
+    placeholder="Password"
+    autocomplete="current-password"
+    required
+    class="w-full rounded-full border border-gray-300 pl-14 pr-12 py-4 text-gray-600 placeholder-gray-400 focus:outline-none focus:border-pink-400 transition"
+  />
+  <button
+    type="button"
+    id="togglePassword"
+    aria-label="Show password"
+    class="absolute inset-y-0 right-5 flex items-center text-gray-400 hover:text-gray-600 focus:outline-none"
+  >
+    <!-- Eye (show) icon -->
+    <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+      <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+    </svg>
+    <!-- Eye-slash (hide) icon -->
+    <svg id="eyeSlashIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7a10.025 10.025 0 012.132-3.592m3.181-2.182A9.958 9.958 0 0112 5c4.478 0 8.268 2.943 9.542 7a9.973 9.973 0 01-4.132 5.411M3 3l18 18" />
+    </svg>
+  </button>
+</div>
+
 
 </form>
              
 
               <button
                 type="submit"
-                class="animate-rise-d2 w-full lg:w-fit lg:px-10 rounded-full py-3.5 font-medium flex justify-center gap-2 bg-rose-500 text-white transition-transform duration-150 hover:bg-rose-600 hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-3 focus-visible:outline-rose-600/45 focus-visible:outline-offset-2"
+                class="animate-rise-d2 w-full lg:w-fit lg:px-10 rounded-full py-3.5 mt-3 font-medium flex justify-center gap-2 bg-rose-500 text-white transition-transform duration-150 hover:bg-rose-600 hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-3 focus-visible:outline-rose-600/45 focus-visible:outline-offset-2"
               >
                Register
                 <i class="bi bi-arrow-right"></i>
@@ -207,6 +226,7 @@
       </div>
 
     </section>
+    <script src="script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
   AOS.init();
