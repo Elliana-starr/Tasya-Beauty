@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasya Beauty - Welcome</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+    integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FBF3EF',
+            ink: '#2B2220',
+            'ink-soft': '#6E5F5A',
+            rose: {
+              500: '#C4707F',
+              600: '#B4596A',
+            },
+          },
+          fontFamily: {
+            display: ['Fraunces', 'serif'],
+            body: ['"Work Sans"', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-body bg-paper">
+
+  <section class="relative overflow-hidden py-10 lg:py-16 px-5 lg:px-16 bg-paper ">
+      <img
+        src="asset/images/flower2.png"
+        alt=""
+        class="absolute -top-6 -left-10 w-40 sm:w-56 opacity-90 pointer-events-none select-none z-0"
+      />
+      <img
+        src="asset/images/flower1.png"
+        alt=""
+        class="absolute -bottom-10 -right-10 w-32 sm:w-48 opacity-90 pointer-events-none select-none z-0"
+      />
+
+    <div class="relative z-10 max-w-6xl mx-auto">
+
+      <div class="grid lg:grid-cols-2 lg:min-h-[640px] max-w-md lg:max-w-none mx-auto bg-white sm-rounded-b-3xl rounded-2xl shadow-[0_30px_60px_-25px_rgba(43,34,32,0.35)] overflow-hidden">
+
+     
+        <div class="relative aspect-[4/5] lg:aspect-[3/4] overflow-hidden rounded-b-[70px] sm:rounded-b-none">
+          <img
+            src="asset/images/tasya-products.jpeg"
+            alt="Tasya skincare products arranged on a wooden tray"
+            class="w-full h-full object-cover "
+          >
+       
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/55 via-transparent to-transparent"></div>
+
+          
+          <div class="absolute top-0 inset-x-0 flex items-center justify-between px-6 pt-6 lg:px-8 lg:pt-8">
+            <div class="flex items-center gap-2 text-rose-600 font-display text-lg lg:text-xl font-semibold">
+
+              <span><img src="asset/images/Logo2.png"
+                class="w-[250px]" alt="" srcset=""> </span>
+            </div>
+            <a href="#" class="text-rose-500 font-medium text-sm">Skip</a>
+          </div>
+        </div>
+
+        <!-- content -->
+        <div class="relative flex flex-col justify-end lg:justify-center px-6 py-8 lg:px-12 lg:py-10">
+
+          <div class="hidden lg:flex w-[34px] h-[34px] items-center justify-center rounded-full bg-rose-600/[0.08] text-rose-600 mb-4">
+            <i class="bi bi-flower1"></i>
+          </div>
+
+          <h1 class="animate-rise font-display text-3xl leading-tight lg:text-5xl text-ink">
+            Healthy skin,<br>
+            <span class="text-rose-500 italic">happier</span> you
+          </h1>
+
+          <p class="animate-rise-d1 mt-4 text-ink-soft text-base lg:text-lg lg:max-w-sm">
+            Your skin deserves the best. Discover simple, effective skincare
+            for a clearer, brighter you.
+          </p>
+
+          <button class="animate-rise-d2 mt-7 w-full lg:w-fit lg:px-10 rounded-full py-3.5 font-medium flex items-center justify-center gap-2 bg-rose-500 text-white transition-transform duration-150 hover:bg-rose-600 hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-3 focus-visible:outline-rose-600/45 focus-visible:outline-offset-2">
+            Get started
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
