@@ -1,5 +1,4 @@
-
-  const toggleBtn = document.getElementById('togglePassword');
+ const toggleBtn = document.getElementById('togglePassword');
   const passwordInput = document.getElementById('password');
   const eyeIcon = document.getElementById('eyeIcon');
   const eyeSlashIcon = document.getElementById('eyeSlashIcon');
@@ -13,4 +12,3 @@
 
     toggleBtn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
   });
-
