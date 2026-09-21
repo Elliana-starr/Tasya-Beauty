@@ -64,7 +64,7 @@
         class="absolute -bottom-10 -right-10 w-32 sm:w-48 opacity-90 pointer-events-none select-none z-0"
       />
 
-      <div  data-aos="flip-right"
+      <div  data-aos="zoom-in-down"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="2000" class="relative z-10 max-w-6xl mx-auto">
 
@@ -93,7 +93,7 @@
       Sign Up
             </p>
 
-           <form class="space-y-5" novalidate>
+           <form id="regForm" class="space-y-5" >
 
   <div class="relative">
     <label for="full_name" class="sr-only">Full name</label>
@@ -107,6 +107,7 @@
       type="text"
       name="full_name"
       placeholder="Full Name"
+      required
       class="w-full rounded-full border border-gray-300 pl-14 pr-6 py-4 text-gray-600 placeholder-gray-400 focus:outline-none focus:border-pink-400 transition"
     />
   </div>
@@ -140,6 +141,7 @@
       id="phone"
       type="tel"
       name="phone"
+      required
       placeholder="Phone Number"
       autocomplete="tel"
       pattern="[0-9+\-\s()]{7,}"
@@ -180,11 +182,6 @@
     </svg>
   </button>
 </div>
-
-
-</form>
-             
-
               <button
                 type="submit"
                 class="animate-rise-d2 w-full lg:w-fit lg:px-10 rounded-full py-3.5 mt-3 font-medium flex justify-center gap-2 bg-rose-500 text-white transition-transform duration-150 hover:bg-rose-600 hover:-translate-y-px active:translate-y-0 focus-visible:outline focus-visible:outline-3 focus-visible:outline-rose-600/45 focus-visible:outline-offset-2"
@@ -226,7 +223,10 @@
       </div>
 
     </section>
-    <script src="asset/js/signUp.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="asset/js/signUp.js" defer></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
   AOS.init();

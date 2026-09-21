@@ -1,3 +1,6 @@
+ 
+ 
+ const signInForm = document.getElementById('signIn_form');
  const toggleBtn = document.getElementById('togglePassword');
   const passwordInput = document.getElementById('password');
   const eyeIcon = document.getElementById('eyeIcon');
@@ -11,4 +14,20 @@
     eyeSlashIcon.classList.toggle('hidden', !isPassword);
 
     toggleBtn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+  });
+
+
+
+  signInForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+     const data = {
+      email: document.getElementById('email').value,
+      password: document.getElementById('password').value
+    };
+
+    console.log(data);
+
+  Swal.fire('Success!', 'Sign in successful.', 'success');
+
   });

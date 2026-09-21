@@ -1,3 +1,5 @@
+ 
+ const regForm = document.getElementById('regForm')
  const toggleBtn = document.getElementById('togglePassword');
   const passwordInput = document.getElementById('password');
   const eyeIcon = document.getElementById('eyeIcon');
@@ -11,4 +13,20 @@
     eyeSlashIcon.classList.toggle('hidden', !isPassword);
 
     toggleBtn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+  });
+
+
+  regForm.addEventListener('submit', function(event){
+    event.preventDefault();
+
+    const data = {
+      name: document.getElementById('full_name').value,
+      phone: document.getElementById('phone').value,
+      email: document.getElementById('email').value,
+      password: document.getElementById('password').value
+    };
+
+    console.log(data);
+    Swal.fire('Success!', 'You are registered.', 'success');
+
   });
