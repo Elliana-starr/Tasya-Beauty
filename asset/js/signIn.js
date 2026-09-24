@@ -31,3 +31,4 @@
   Swal.fire('Success!', 'Sign in successful.', 'success');
 
   });
+  //JSON FETCH ASYNCHRONOUS AND ASYNC
